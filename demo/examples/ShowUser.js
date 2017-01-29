@@ -6,28 +6,34 @@ import MenuItem from '../../src/MenuItem';
 class ShowUser extends React.Component {
   render() {
     return (
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td><h3>Show Logged In User</h3></td>
-              <td>
-                <DropdownMenu userName="John Doe">
-                  <MenuItem key="1" text="Home" location="/" />
-                  <MenuItem key="2" text="Edit Profile" location="/" />
-                  <MenuItem key="3" text="Logout" location="/" />
-                </DropdownMenu>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div style={{marginLeft: '30px'}}>
+        <h3>Show Logged In User</h3>
+        <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
+
+        <DropdownMenu userName="John Doe">
+          <MenuItem key="1" text="Home" location="/showuser" />
+          <MenuItem key="2" text="Edit Profile" location="/showuser" />
+          <MenuItem key="3" text="Logout" location="/showuser" />
+        </DropdownMenu>
+
         <pre><code>
-          &lt;DropdownMenu userName='John Doe'&gt;
-            &lt;MenuItem key='1' text='Home' location='/' /&gt;
-            &lt;MenuItem key='2' text='Edit Profile' location='/' /&gt;
-            &lt;MenuItem key='3' text='Logout' location='/' /&gt;
-          &lt;/DropdownMenu&gt;
+          import React from 'react';<br />
+          import &#123; DropdownMenu, MenuItem &#125; from 'react-dropdown-menu';<br />
+          <br />
+          class ShowUser extends React.Component &#123;<br />
+            &nbsp;&nbsp;render() &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu userName='John Doe'&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/showuser' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/showuser' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/showuser' /&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;)<br />
+            &nbsp;&nbsp;&#125;<br />
+          &#125;<br />
         </code></pre>
+
+        <Link to="/">Back</Link>
       </div>
     );
   }

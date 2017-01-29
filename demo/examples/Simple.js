@@ -6,28 +6,34 @@ import MenuItem from '../../src/MenuItem';
 class Simple extends React.Component {
   render() {
     return (
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td><h3>Simple</h3></td>
-              <td>
-                <DropdownMenu>
-                  <MenuItem key="1" text="Home" location="/" />
-                  <MenuItem key="2" text="Edit Profile" location="/" />
-                  <MenuItem key="3" text="Logout" location="/" />
-                </DropdownMenu>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div style={{marginLeft: '30px'}}>
+        <h3>Simple Dropdown Menu</h3>
+        <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
+
+        <DropdownMenu>
+          <MenuItem key="1" text="Home" location="/simple" />
+          <MenuItem key="2" text="Edit Profile" location="/simple" />
+          <MenuItem key="3" text="Logout" location="/simple" />
+        </DropdownMenu>
+
         <pre><code>
-          &lt;DropdownMenu&gt;
-            &lt;MenuItem key='1' text='Home' location='/' /&gt;
-            &lt;MenuItem key='2' text='Edit Profile' location='/' /&gt;
-            &lt;MenuItem key='3' text='Logout' location='/' /&gt;
-          &lt;/DropdownMenu&gt;
+          import React from 'react';<br />
+          import &#123; DropdownMenu, MenuItem &#125; from 'react-dropdown-menu';<br />
+          <br />
+          class Simple extends React.Component &#123;<br />
+            &nbsp;&nbsp;render() &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/simple' /&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;)<br />
+            &nbsp;&nbsp;&#125;<br />
+          &#125;<br />
         </code></pre>
+
+        <Link to="/">Back</Link>
       </div>
     );
   }

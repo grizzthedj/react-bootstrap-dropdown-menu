@@ -46,8 +46,21 @@ export default SettingsMenu;
 ```
 ## Download Examples
 
+```js
+git clone <GIT_URL>
+cd react-dropdown-menu
+npm install
+gulp demo
+Browse http://localhost:8080
+```
 
 ## Documentation
 
+## Backlog
+
+* Implement a trigger that can be text or an image and passed in via props.
+* Extend CSS styling so that user defined styles can be passed as props(to both parent and child).
 
 ## Known Bugs
+
+* Having 2(or more) instances on same page will cause the second, and all subsequent instances to not collapse when clicking outside of the menu. This is not an issue when there is only a single instance.

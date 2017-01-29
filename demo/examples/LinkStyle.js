@@ -11,28 +11,40 @@ class LinkStyle extends React.Component {
       }
     }
     return (
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td><h3>Add Link Style</h3></td>
-              <td>
-                <DropdownMenu>
-                  <MenuItem key="1" text="Home" linkStyle={Css.red} location="/" />
-                  <MenuItem key="2" text="Edit Profile" linkStyle={Css.red} location="/" />
-                  <MenuItem key="3" text="Logout" linkStyle={Css.red} location="/" />
-                </DropdownMenu>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div style={{marginLeft: '30px'}}>
+        <h3>Edit Link Style</h3>
+        <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
+
+        <DropdownMenu>
+          <MenuItem key="1" text="Home" linkStyle={Css.red} location="/linkstyle" />
+          <MenuItem key="2" text="Edit Profile" linkStyle={Css.red} location="/linkstyle" />
+          <MenuItem key="3" text="Logout" linkStyle={Css.red} location="/linkstyle" />
+        </DropdownMenu>
+
         <pre><code>
-          &lt;DropdownMenu&gt;
-            &lt;MenuItem key='1' text='Home' linkStyle=&#123;Css.red&#125; location='/' /&gt;
-            &lt;MenuItem key='2' text='Edit Profile' linkStyle=&#123;Css.red&#125; location='/' /&gt;
-            &lt;MenuItem key='3' text='Logout' linkStyle=&#123;Css.red&#125; location='/' /&gt;
-          &lt;/DropdownMenu&gt;
+          import React from 'react';<br />
+          import &#123; DropdownMenu, MenuItem &#125; from 'react-dropdown-menu';<br />
+          <br />
+          class LinkStyle extends React.Component &#123;<br />
+            &nbsp;&nbsp;var Css = &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;red: &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: 'red'<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br />
+            &nbsp;&nbsp;&#125;<br />
+            <br />
+            &nbsp;&nbsp;render() &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;)<br />
+            &nbsp;&nbsp;&#125;<br />
+          &#125;<br />
         </code></pre>
+
+        <Link to="/">Back</Link>
       </div>
     );
   }

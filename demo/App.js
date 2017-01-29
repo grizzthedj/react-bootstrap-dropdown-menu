@@ -2,17 +2,20 @@ import React from 'react';
 import { Link } from 'react-router';
 import DropdownMenu from '../src/DropdownMenu';
 import MenuItem from '../src/MenuItem';
-import { Simple, ShowUser, LinkStyle, ClickEvent } from './examples/Index';
 
 class App extends React.Component {
   render() {
     return (
       <div style={{marginLeft: '30px'}}>
-        <h2>react-bootstrap-dropdown-menu Examples</h2>
-        <Simple />
-        <ShowUser />
-        <LinkStyle />
-        <ClickEvent />
+        <h2>react-dropdown-menu Examples</h2>
+        <p>Click the links below to see the examples in action.</p>
+        <ul>
+          <li><Link to="/simple">Simple Dropdown Menu</Link></li>
+          <li><Link to="/separator">Dropdown Menu with Separator</Link></li>
+          <li><Link to="/showuser">Show Logged In User</Link></li>
+          <li><Link to="/linkstyle">Edit Link Style</Link></li>
+          <li><Link to="/clickevent">MenuItem with OnClick Event</Link></li>
+        </ul>
       </div>
     );
   }

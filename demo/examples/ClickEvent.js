@@ -10,36 +10,57 @@ class ClickEvent extends React.Component {
   }
 
   deleteAccount(e) {
+    e.preventDefault();
     if(confirm('Are you sure?')) {
       console.log('Bye bye!');
+      return true;
     }
+    return false;
   }
 
   render() {
     return (
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td><h3>OnClick Event</h3></td>
-              <td>
-                <DropdownMenu>
-                  <MenuItem key="1" text="Home" location="/" />
-                  <MenuItem key="2" text="Edit Profile" location="/" />
-                  <MenuItem key="3" text="Delete Account" onClick={this.deleteAccount} location="/" />
-                  <MenuItem key="4" text="Logout" location="/" />
-                </DropdownMenu>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div style={{marginLeft: '30px'}}>
+        <h3>MenuItem with OnClick Event</h3>
+        <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
+
+        <DropdownMenu>
+          <MenuItem key="1" text="Home" location="/clickevent" />
+          <MenuItem key="2" text="Edit Profile" location="/clickevent" />
+          <MenuItem key="3" text="Delete Account" onClick={this.deleteAccount} />
+          <MenuItem key="4" text="Logout" location="/clickevent" />
+        </DropdownMenu>
+
         <pre><code>
-          &lt;DropdownMenu&gt;
-            &lt;MenuItem key='1' text='Home' location='/' /&gt;
-            &lt;MenuItem key='2' text='Edit Profile' location='/' /&gt;
-            &lt;MenuItem key='3' text='Delete Account' onClick=&#123;this.deleteAccount&#125; location='/' /&gt;
-            &lt;MenuItem key='4' text='Logout' location='/' /&gt;
-          &lt;/DropdownMenu&gt;
+          import React from 'react';<br />
+          import &#123; DropdownMenu, MenuItem &#125; from 'react-dropdown-menu';<br />
+          <br />
+          class ClickEvent extends React.Component &#123;<br />
+            &nbsp;&nbsp;constructor() &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;super();<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;this.deleteAccount = this.deleteAccount.bind(this);<br />
+            &nbsp;&nbsp;&#125;<br />
+            <br />
+            &nbsp;&nbsp;deleteAccount(e) &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;e.preventDefault();<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;if(confirm('Are you sure?')) &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Bye bye!');<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return false;<br />
+            &nbsp;&nbsp;&#125;<br />
+            <br />
+            &nbsp;&nbsp;render() &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/clickevent' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/clickevent' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Delete Account' onClick=&#123;this.deleteAccount&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='4' text='Logout' location='/clickevent' /&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;)<br />
+            &nbsp;&nbsp;&#125;<br />
+          &#125;<br />
         </code></pre>
       </div>
     );
