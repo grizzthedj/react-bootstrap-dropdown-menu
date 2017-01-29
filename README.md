@@ -12,7 +12,7 @@ npm install react-dropdown-menu --save
 
 ```js
 import React from 'react';
-import DropdownMenu from 'react-bootstrap-dropdown-menu';
+import DropdownMenu from 'react-dropdown-menu';
 
 class SettingsMenu extends React.Component {
   constructor() {
