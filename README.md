@@ -1,4 +1,4 @@
-# react-bootstrap-dropdown-menu
+# react-dropdown-menu
 
 A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on websites where users login.
 
