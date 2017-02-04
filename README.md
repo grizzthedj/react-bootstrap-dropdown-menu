@@ -5,7 +5,7 @@ A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on web
 ## Installation
 
 ```js
-npm install react-dropdown-menu --save
+npm install react-bootstrap-dropdown-menu --save
 ```
 Include bootstrap in your project(if not already there)
 ```html
