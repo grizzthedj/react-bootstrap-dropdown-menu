@@ -1,22 +1,25 @@
-
 const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  context: path.resolve(__dirname, './demo'),
+  context: path.resolve(__dirname, './src'),
   entry: {
-    app: ['./index.js','../src/App.js']
+    app: './App.js',
   },
   output: {
-    path: path.resolve(__dirname, './demo'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, './dist'),
+    filename: 'index.js',
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {presets:['es2015','react']}
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets:['es2015']
+        }
+      }
+    ]
   }
 };
