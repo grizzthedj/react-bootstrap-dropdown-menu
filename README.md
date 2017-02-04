@@ -54,7 +54,7 @@ export default SettingsMenu;
 
 ```js
 git clone https://github.com/grizzthedj/react-bootstrap-dropdown-menu.git
-cd react-dropdown-menu
+cd react-bootstrap-dropdown-menu
 npm install
 gulp demo
 Browse http://localhost:8080
