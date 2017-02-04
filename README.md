@@ -16,6 +16,8 @@ Include bootstrap in your project(if not already there)
 
 A simple example using OnClick events. Download and run the demo for more examples.
 
+![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619850/7b48caaa-eacb-11e6-835e-c49b1931dc42.png)
+
 ```js
 import React from 'react';
 import { DropdownMenu, MenuItem } from 'react-bootstrap-dropdown-menu';
@@ -41,8 +43,9 @@ class SettingsMenu extends React.Component {
         <MenuItem key="1" text="Home" location="/home" />
         <MenuItem key="2" text="Edit Profile" location="/profile" />
         <MenuItem key="3" text="Change Password" location="/change-password" />
-        <MenuItem key="4" text="Delete Account" onClick={this.deleteAccount} />
-        <MenuItem key="5" text="Logout" onClick={this.logout} />
+        <MenuItem key="4" text="Privacy Settings" location="/privacy-settings" />
+        <MenuItem key="5" text="Delete Account" onClick={this.deleteAccount} />
+        <MenuItem key="6" text="Logout" onClick={this.logout} />
       </DropdownMenu>
     );
   }
