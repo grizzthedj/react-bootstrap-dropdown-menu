@@ -18,7 +18,7 @@ A simple example using OnClick events. Download and run the demo for more exampl
 
 ```js
 import React from 'react';
-import DropdownMenu from 'react-bootstrap-dropdown-menu';
+import { DropdownMenu, MenuItem } from 'react-bootstrap-dropdown-menu';
 
 class SettingsMenu extends React.Component {
   constructor() {

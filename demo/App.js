@@ -7,7 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div style={{marginLeft: '30px'}}>
-        <h2>react-bootstrap-dropdown-menu Examples</h2>
+        <h2>react-bootstrap-dropdown-menu</h2>
+        <h3><strong>Examples</strong></h3>
         <p>Click the links below to see the examples in action.</p>
         <ul>
           <li><Link to="/simple">Simple Dropdown Menu</Link></li>
