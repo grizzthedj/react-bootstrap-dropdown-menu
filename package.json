@@ -5,7 +5,7 @@
   "main": "dist/App.js",
   "scripts": {
     "test": "jest",
-    "build": "gulp build"
+    "build": "webpack -p"
   },
   "repository": "https://github.com/grizzthedj/react-bootstrap-dropdown-menu.git",
   "homepage": "",
