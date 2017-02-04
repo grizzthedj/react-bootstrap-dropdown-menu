@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link, browserHistory } from 'react-router';
-import MenuItem from './MenuItem';
 import Css from './Css';
 
 function hideMenu() {
@@ -24,8 +22,9 @@ class DropdownMenu extends React.Component {
   }
 
   toggleMenu(e) {
-    if (this.refs.__react_bs_dd_menuItems) {
-      this.refs.__react_bs_dd_menuItems.classList.toggle("show");
+    const items = document.getElementById('__react_bs_dd_menuItems');
+    if (items) {
+      items.classList.toggle("show");
     }
   }
 
@@ -44,7 +43,7 @@ class DropdownMenu extends React.Component {
     return (
       <div style={Css.menu}>
         <span className="glyphicon glyphicon-cog fa-lg" style={Css.gear} onClick={this.toggleMenu}></span>
-        <div id="__react_bs_dd_menuItems" ref="__react_bs_dd_menuItems" className="__react_bs_dd_menuItems" style={Css.menuContent}>
+        <div id="__react_bs_dd_menuItems" className="__react_bs_dd_menuItems" style={Css.menuContent}>
           <ul style={Css.bareBones}>
             {userItem}
             {this.props.children}

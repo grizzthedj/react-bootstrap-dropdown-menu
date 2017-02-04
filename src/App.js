@@ -1,2 +1,5 @@
 
-module.exports = require('./DropdownMenu.js');
+module.exports = {
+  DropdownMenu: require('./DropdownMenu'),
+  MenuItem: require('./MenuItem')
+}

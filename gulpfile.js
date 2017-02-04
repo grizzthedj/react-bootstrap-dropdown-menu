@@ -1,7 +1,14 @@
-var gulp = require('gulp');
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var demoConfig = require('./webpack.config.demo.js');
+const gulp = require('gulp');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const demoConfig = require('./webpack.config.demo.js');
+const babel = require('gulp-babel');
+
+gulp.task('build', function() {
+  gulp.src(['./src/**/*.js', './src/*js'])
+    .pipe(babel())
+    .pipe(gulp.dest('./dist'));
+});
 
 gulp.task('demo', function() {
   new WebpackDevServer(webpack(demoConfig), {
