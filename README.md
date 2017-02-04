@@ -5,7 +5,7 @@ A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on web
 ## Installation
 
 ```js
-npm install react-dropdown-menu --save
+npm install react-bootstrap-dropdown-menu --save
 ```
 Include bootstrap in your project(if not already there)
 ```html
@@ -15,6 +15,8 @@ Include bootstrap in your project(if not already there)
 ## Usage
 
 A simple example using OnClick events. Download and run the demo for more examples.
+
+![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619923/7ddd5d42-eacd-11e6-9bda-ee9be66cb64b.png)
 
 ```js
 import React from 'react';
@@ -41,8 +43,9 @@ class SettingsMenu extends React.Component {
         <MenuItem key="1" text="Home" location="/home" />
         <MenuItem key="2" text="Edit Profile" location="/profile" />
         <MenuItem key="3" text="Change Password" location="/change-password" />
-        <MenuItem key="4" text="Delete Account" onClick={this.deleteAccount} />
-        <MenuItem key="5" text="Logout" onClick={this.logout} />
+        <MenuItem key="4" text="Privacy Settings" location="/privacy-settings" />
+        <MenuItem key="5" text="Delete Account" onClick={this.deleteAccount} />
+        <MenuItem key="6" text="Logout" onClick={this.logout} />
       </DropdownMenu>
     );
   }
