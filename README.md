@@ -16,7 +16,7 @@ Include bootstrap in your project(if not already there)
 
 A simple example using OnClick events. Download and run the demo for more examples.
 
-![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619850/7b48caaa-eacb-11e6-835e-c49b1931dc42.png)
+![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619923/7ddd5d42-eacd-11e6-9bda-ee9be66cb64b.png)
 
 ```js
 import React from 'react';
