@@ -10,6 +10,8 @@ npm install react-dropdown-menu --save
 
 ## Usage
 
+A simple example using OnClick events. Download and run the demo for more examples.
+
 ```js
 import React from 'react';
 import DropdownMenu from 'react-dropdown-menu';
@@ -47,19 +49,18 @@ export default SettingsMenu;
 ## Download Examples
 
 ```js
-git clone <GIT_URL>
+git clone https://github.com/grizzthedj/react-dropdown-menu.git
 cd react-dropdown-menu
 npm install
 gulp demo
 Browse http://localhost:8080
 ```
 
-## Documentation
-
 ## Backlog
 
+* Error handling
 * Implement a trigger that can be text or an image and passed in via props.
-* Extend CSS styling so that user defined styles can be passed as props(to both parent and child).
+* Extend CSS styling so that user defined styles can be passed as props.
 
 ## Known Bugs
 
