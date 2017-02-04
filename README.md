@@ -1,4 +1,4 @@
-# react-dropdown-menu
+# react-bootstrap-dropdown-menu
 
 A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on websites where users login.
 
@@ -7,6 +7,10 @@ A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on web
 ```js
 npm install react-dropdown-menu --save
 ```
+Include bootstrap in your project(if not already there)
+```html
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
+```
 
 ## Usage
 
@@ -14,7 +18,7 @@ A simple example using OnClick events. Download and run the demo for more exampl
 
 ```js
 import React from 'react';
-import DropdownMenu from 'react-dropdown-menu';
+import DropdownMenu from 'react-bootstrap-dropdown-menu';
 
 class SettingsMenu extends React.Component {
   constructor() {
@@ -49,7 +53,7 @@ export default SettingsMenu;
 ## Download Examples
 
 ```js
-git clone https://github.com/grizzthedj/react-dropdown-menu.git
+git clone https://github.com/grizzthedj/react-bootstrap-dropdown-menu.git
 cd react-dropdown-menu
 npm install
 gulp demo
