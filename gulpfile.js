@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const demoConfig = require('./webpack.config.demo.js');
+const demoConfig = require('./webpack.config.js');
 const babel = require('gulp-babel');
 
 gulp.task('build', function() {
