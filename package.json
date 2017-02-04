@@ -2,7 +2,7 @@
   "name": "react-bootstrap-dropdown-menu",
   "version": "1.0.8",
   "description": "A simple Dropdown Menu for React. Commonly used as a user 'Settings' menu on websites where users login.",
-  "main": "dist/index.js",
+  "main": "dist/App.js",
   "scripts": {
     "test": "jest",
     "build": "webpack -p"
