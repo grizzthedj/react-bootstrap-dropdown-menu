@@ -7,7 +7,7 @@ A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on web
 ```js
 npm install react-bootstrap-dropdown-menu --save
 ```
-Include bootstrap in your project(if not already there)
+Include bootstrap in your project(if not already included)
 ```html
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
 ```
@@ -39,7 +39,7 @@ class SettingsMenu extends React.Component {
 
   render() {
     return (
-      <DropdownMenu userName="Foo Bar">
+      <DropdownMenu userName="Chris Smith">
         <MenuItem key="1" text="Home" location="/home" />
         <MenuItem key="2" text="Edit Profile" location="/profile" />
         <MenuItem key="3" text="Change Password" location="/change-password" />
