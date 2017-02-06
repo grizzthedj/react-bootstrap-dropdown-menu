@@ -65,12 +65,16 @@ Browse http://localhost:8080
 
 ## Backlog
 
+* Allow drop to be left or right aligned of trigger via props.
+* Fix <br /> not working for links in MenuItems
+* Fix z-index issue with bootstrap panels
 * Error handling
 * Implement a trigger that can be text or an image and passed in via props.
 * Extend CSS styling so that user defined styles can be passed as props.
-* Allow drop to be left or right aligned of trigger via props.
-* Fix zindex issue with bootstrap panels 
+ 
 
 ## Known Bugs
 
 * Having 2(or more) instances on same page will cause the second, and all subsequent instances to not collapse when clicking outside of the menu. This is not an issue when there is only a single instance.
+* Other UI elements(i.e. bootstrp panels etc.) sometimes overlap 
+* Line breaks don't always separate links 
