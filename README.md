@@ -68,6 +68,8 @@ Browse http://localhost:8080
 * Error handling
 * Implement a trigger that can be text or an image and passed in via props.
 * Extend CSS styling so that user defined styles can be passed as props.
+* Allow drop to be left or right aligned of trigger via props.
+* Fix zindex issue with bootstrap panels 
 
 ## Known Bugs
 
