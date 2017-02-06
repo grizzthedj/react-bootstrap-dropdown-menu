@@ -66,7 +66,7 @@ Browse http://localhost:8080
 ## Backlog
 
 * Allow drop to be left or right aligned of trigger via props.
-* Fix <br /> not working for links in MenuItems
+* Fix br's not working for links in MenuItems
 * Fix z-index issue with bootstrap panels
 * Error handling
 * Implement a trigger that can be text or an image and passed in via props.
