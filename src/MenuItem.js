@@ -24,7 +24,7 @@ class MenuItem extends React.Component {
         <li>
           <a href={this.props.location} onClick={this.props.onClick}
             style={this.state.linkStyle}>{this.props.text}
-          </a>
+          </a><br />
         </li>
       )
     }
