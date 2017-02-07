@@ -21,7 +21,7 @@ class MenuItem extends React.Component {
     }
     else {
       return (
-        <li style={{listStyleType:'none'}}>
+        <li>
           <a href={this.props.location} onClick={this.props.onClick}
             style={this.state.linkStyle}>{this.props.text}
           </a>
