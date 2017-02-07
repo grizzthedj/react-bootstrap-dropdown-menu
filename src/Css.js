@@ -17,8 +17,8 @@ var Css = {
   menuContent: {
     display: 'none',
     position: 'absolute',
-    left: '0px',  
-    zIndex: 'inherit',
+    left: '0px',
+    zIndex: '9999',
     backgroundColor: '#f9f9f9',
     minWidth: '180px',
     padding: '12px',
