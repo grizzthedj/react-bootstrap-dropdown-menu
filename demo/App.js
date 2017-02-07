@@ -16,6 +16,7 @@ class App extends React.Component {
           <li><Link to="/showuser">Show Logged In User</Link></li>
           <li><Link to="/linkstyle">Edit Link Style</Link></li>
           <li><Link to="/clickevent">MenuItem with OnClick Event</Link></li>
+          <li><Link to="/position">Change Drop Position</Link></li>
         </ul>
       </div>
     );

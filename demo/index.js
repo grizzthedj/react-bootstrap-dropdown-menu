@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import { render } from 'react-dom';
 import App from './App';
-import { Simple, ShowUser, LinkStyle, ClickEvent, Separator } from './examples/Index';
+import { Simple, ShowUser, LinkStyle, ClickEvent, Separator, Position } from './examples/Index';
 
 render((
   <Router history={hashHistory}>
@@ -12,5 +12,6 @@ render((
     <Route path="/linkstyle" component={LinkStyle} />
     <Route path="/clickevent" component={ClickEvent} />
     <Route path="/separator" component={Separator} />
+    <Route path="/position" component={Position} />
   </Router>
 ), document.getElementById('app'))

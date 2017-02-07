@@ -18,7 +18,7 @@ class Simple extends React.Component {
 
         <pre><code>
           import React from 'react';<br />
-        import &#123; DropdownMenu, MenuItem &#125; from 'react-bootstrap-dropdown-menu';<br />
+          import &#123; DropdownMenu, MenuItem &#125; from 'react-bootstrap-dropdown-menu';<br />
           <br />
           class Simple extends React.Component &#123;<br />
             &nbsp;&nbsp;render() &#123;<br />

@@ -17,8 +17,10 @@ var Css = {
   menuContent: {
     display: 'none',
     position: 'absolute',
+    left: '0px',  
+    zIndex: 'inherit',
     backgroundColor: '#f9f9f9',
-    minWidth: '160px',
+    minWidth: '180px',
     padding: '12px',
     overflow: 'auto',
     boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)'
