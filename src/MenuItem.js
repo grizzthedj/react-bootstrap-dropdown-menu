@@ -17,15 +17,15 @@ class MenuItem extends React.Component {
 
   render() {
     if (this.props.type && this.props.type.toLowerCase() === 'separator') {
-      return (<li><hr width='100%' /></li>)
+      return (<hr width='100%' />)
     }
     else {
       return (
-        <li>
+        <div>
           <a href={this.props.location} onClick={this.props.onClick}
             style={this.state.linkStyle}>{this.props.text}
-          </a>
-        </li>
+          </a><br />
+        </div>
       )
     }
   }

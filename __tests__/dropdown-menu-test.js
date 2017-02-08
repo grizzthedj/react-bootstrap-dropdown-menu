@@ -22,6 +22,22 @@ describe('DropdownMenu', function() {
     expect(menu).not.toBe.undefined;
   });
 
+  it('DropdownMenu with trigger and triggerType specified should mount', function() {
+    const menu = mount(<DropdownMenu trigger="Settings" triggerType="text" />);
+    expect(menu).not.toBe.undefined;
+  });
+
+  // TODO: Figure out how to expect error to be thrown
+  // it('DropdownMenu with unknown triggerType should not mount', function() {
+  //   const menu = mount(<DropdownMenu trigger="Settings" triggerType="unknown" />);
+  //   expect(menu).toBe.undefined;
+  // });
+
+  it('DropdownMenu with position specified should mount', function() {
+    const menu = mount(<DropdownMenu position="left" />);
+    expect(menu).not.toBe.undefined;
+  });
+
   it('DropdownMenu with child MenuItem should mount', function() {
     const menu = mount(
       <DropdownMenu>
@@ -48,6 +64,6 @@ describe('DropdownMenu', function() {
         <MenuItem text="Or" location="/here" />
       </DropdownMenu>
     );
-    expect(menu.find(menuItemDiv).find('ul').children().length).toBe(2);
+    expect(menu.find(menuItemDiv).find('div').children().length).toBe(2);
   });
 });

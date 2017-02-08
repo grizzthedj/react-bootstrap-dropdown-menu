@@ -10,9 +10,24 @@ var Css = {
     padding: '14px',
     border: 'none'
   },
+  imageTrigger: {
+    height: '55px',
+    width: '65px',
+    cursor: 'pointer',
+    padding: '14px',
+    border: 'none'
+  },
+  textTrigger: {
+    cursor: 'pointer',
+    padding: '14px',
+    border: 'none'
+  },
   menu: {
     position: 'relative',
     display: 'inline-block'
+  },
+  menuItem: {
+    float: 'left'
   },
   menuContent: {
     display: 'none',
@@ -24,10 +39,6 @@ var Css = {
     padding: '12px',
     overflow: 'auto',
     boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)'
-  },
-  bareBones: {
-    listStyle: 'none',
-    paddingLeft: '6px'
   },
   show: {
     display: 'block'

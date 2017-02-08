@@ -17,6 +17,9 @@ class App extends React.Component {
           <li><Link to="/linkstyle">Edit Link Style</Link></li>
           <li><Link to="/clickevent">MenuItem with OnClick Event</Link></li>
           <li><Link to="/position">Change Drop Position</Link></li>
+          <li><Link to="/imagetrigger">Image Trigger</Link></li>
+          <li><Link to="/texttrigger">Text Trigger</Link></li>
+          <li><Link to="/icontrigger">Bootstrap Icon Trigger</Link></li>
         </ul>
       </div>
     );

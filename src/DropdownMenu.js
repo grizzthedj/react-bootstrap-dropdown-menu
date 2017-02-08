@@ -1,13 +1,15 @@
 import React from 'react';
 import Css from './Css';
 
-function hideMenu() {
-  document.getElementById('__react_bs_dd_menuItems').classList.remove('show');
-};
+// TODO: Put these into a closure
+const MENUITEMS_DIV = '__react_bs_dd_menuItems';
+const TRIGGER_CLASS = '__react_bs_dd_trigger';
 
 window.onclick = function(e) {
-  if (e.target.className !== "__react_bs_dd_menuItems show" && e.target.className !== "glyphicon glyphicon-cog fa-lg") {
-    var menuItemDiv = document.getElementById('__react_bs_dd_menuItems');
+  const klass = e.target.className;
+
+  if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.startsWith("glyphicon", 0)) {
+    var menuItemDiv = document.getElementById(MENUITEMS_DIV);
 
     if (menuItemDiv) {
       menuItemDiv.classList.remove('show');
@@ -22,7 +24,7 @@ class DropdownMenu extends React.Component {
   }
 
   toggleMenu(e) {
-    const items = document.getElementById('__react_bs_dd_menuItems');
+    const items = document.getElementById(MENUITEMS_DIV);
     if (items) {
       items.classList.toggle("show");
     }
@@ -31,18 +33,38 @@ class DropdownMenu extends React.Component {
   showLoggedInUserName() {
     if (this.props.userName) {
       return (
-        <li key="-1">
+        <div key="1">
           <p>Logged in as: <br /><strong>{this.props.userName}</strong></p>
           <hr width="100%" />
-        </li>
+        </div>
       );
     }
   }
 
-  getTrigger(triggerStyle) {
-    return (
-      <span key="1" className="glyphicon glyphicon-cog fa-lg" style={triggerStyle} onClick={this.toggleMenu}></span>
-    );
+  getTrigger() {
+    if (this.props.triggerType && this.props.trigger) {
+      switch(this.props.triggerType.toLowerCase()) {
+        case "image":
+          return (
+            <div key="1" onClick={this.toggleMenu}><img src={this.props.trigger} style={Css.imageTrigger} className={TRIGGER_CLASS} /></div>
+          );
+        case "text":
+          return (
+            <div key="1" className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>{this.props.trigger}</div>
+          );
+        case "icon":
+          return (
+            <span key="1" className={this.props.trigger} style={Css.gear} onClick={this.toggleMenu}></span>
+          );
+        default:
+          throw "triggerType is not supported. Try 'image' or 'text' or 'icon'.";
+      }
+    }
+    else {
+      return (
+        <span key="1" className="glyphicon glyphicon-cog" style={Css.gear} onClick={this.toggleMenu}></span>
+      );
+    }
   }
 
   getMenuStyle() {
@@ -72,17 +94,15 @@ class DropdownMenu extends React.Component {
     const userItem = [], trigger = [];
 
     userItem.push(this.showLoggedInUserName());
-    trigger.push(this.getTrigger(Css.gear));
+    trigger.push(this.getTrigger());
     var menuStyle = this.getMenuStyle();
 
     return (
       <div style={Css.menu}>
         {trigger}
-        <div id="__react_bs_dd_menuItems" className="__react_bs_dd_menuItems" style={menuStyle}>
-          <ul style={Css.bareBones}>
-            {userItem}
-            {this.props.children}
-          </ul>
+        <div id={MENUITEMS_DIV} className={MENUITEMS_DIV} style={menuStyle}>
+          {userItem}
+          {this.props.children}
         </div>
       </div>
     );

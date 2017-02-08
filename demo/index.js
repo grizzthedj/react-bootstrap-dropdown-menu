@@ -2,7 +2,10 @@ import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import { render } from 'react-dom';
 import App from './App';
-import { Simple, ShowUser, LinkStyle, ClickEvent, Separator, Position } from './examples/Index';
+import {
+  Simple, ShowUser, LinkStyle, ClickEvent,
+  Separator, Position, ImageTrigger, TextTrigger, IconTrigger
+} from './examples/Index';
 
 render((
   <Router history={hashHistory}>
@@ -13,5 +16,8 @@ render((
     <Route path="/clickevent" component={ClickEvent} />
     <Route path="/separator" component={Separator} />
     <Route path="/position" component={Position} />
+    <Route path="/imagetrigger" component={ImageTrigger} />
+    <Route path="/texttrigger" component={TextTrigger} />
+    <Route path="/icontrigger" component={IconTrigger} />
   </Router>
 ), document.getElementById('app'))
