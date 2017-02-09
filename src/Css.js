@@ -10,6 +10,13 @@ var Css = {
     padding: '14px',
     border: 'none'
   },
+  triangle: {
+    fontSize: '0.9em',
+    cursor: 'pointer',
+    color: 'black',
+    padding: '14px',
+    border: 'none'
+  },
   imageTrigger: {
     height: '55px',
     width: '65px',
@@ -20,7 +27,8 @@ var Css = {
   textTrigger: {
     cursor: 'pointer',
     padding: '14px',
-    border: 'none'
+    border: 'none',
+    fontWeight: 'bold'
   },
   menu: {
     position: 'relative',

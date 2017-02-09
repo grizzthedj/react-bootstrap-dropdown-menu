@@ -53,6 +53,23 @@ class SettingsMenu extends React.Component {
 
 export default SettingsMenu;
 ```
+## DropdownMenu props
+| Name         | Type     | Default                 | Possible Values              | Description     |
+| ------------ | -------- | ----------------------- | ---------------------------- | --------------- |
+| userName     | String   | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
+| position     | String   | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
+| triggerType  | String   | icon                    | icon, text, image            | The Type of drop trigger |
+| trigger      | String   | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
+
+## MenuItem props
+| Name         | Type     | Default                 | Possible Values              | Description     |
+| ------------ | -------- | ----------------------- | ---------------------------- | --------------- |
+| key          | Number   | undefined               | Any integer value            | Must be unique for each MenuItem |
+| text         | String   | undefined               | Any String value             | Text value of the Link in the MenuItem |
+| location     | String   | undefined               | Any String value             | An absolute or relative path |
+| linkStyle    | Object   | inherited               | Hash containing javascript styles(not CSS). See [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public) for more info |  
+| onClick      | Function | undefined               | A Function                   | A function that will fire when the MenuItem Link is clicked |    
+
 ## Download Examples
 
 ```js
@@ -65,13 +82,10 @@ Browse http://localhost:8080
 
 ## Backlog
 
-* Fix br's not working for links in MenuItems
-* Fix z-index issue with bootstrap panels
-* Error handling
-* Extend CSS styling so that user defined styles can be passed as props.
-
+* More Error handling.
+* Handle MenuItem keys internally so that they don't have to be specified.
+* Extend CSS styling so that user defined styles can be passed in as props.
 
 ## Known Bugs
 
 * Having 2(or more) instances on same page will cause the second, and all subsequent instances to not collapse when clicking outside of the menu. This is not an issue when there is only a single instance.
-* Other UI elements(i.e. bootstrp panels etc.) sometimes overlap

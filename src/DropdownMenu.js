@@ -1,7 +1,6 @@
 import React from 'react';
 import Css from './Css';
 
-// TODO: Put these into a closure
 const MENUITEMS_DIV = '__react_bs_dd_menuItems';
 const TRIGGER_CLASS = '__react_bs_dd_trigger';
 
@@ -50,7 +49,10 @@ class DropdownMenu extends React.Component {
           );
         case "text":
           return (
-            <div key="1" className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>{this.props.trigger}</div>
+            <div key="1" className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
+              {this.props.trigger}
+              <span className="glyphicon glyphicon-triangle-bottom" style={Css.triangle}></span>
+            </div>
           );
         case "icon":
           return (
