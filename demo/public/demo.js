@@ -1238,7 +1238,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// TODO: Put these into a closure
 var MENUITEMS_DIV = '__react_bs_dd_menuItems';
 var TRIGGER_CLASS = '__react_bs_dd_trigger';
 
@@ -1311,7 +1310,8 @@ var DropdownMenu = function (_React$Component) {
             return _react2.default.createElement(
               'div',
               { key: '1', className: TRIGGER_CLASS, onClick: this.toggleMenu, style: _Css2.default.textTrigger },
-              this.props.trigger
+              this.props.trigger,
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-triangle-bottom', style: _Css2.default.triangle })
             );
           case "icon":
             return _react2.default.createElement('span', { key: '1', className: this.props.trigger, style: _Css2.default.gear, onClick: this.toggleMenu });
@@ -8614,6 +8614,13 @@ var Css = {
     padding: '14px',
     border: 'none'
   },
+  triangle: {
+    fontSize: '0.9em',
+    cursor: 'pointer',
+    color: 'black',
+    padding: '14px',
+    border: 'none'
+  },
   imageTrigger: {
     height: '55px',
     width: '65px',
@@ -8624,7 +8631,8 @@ var Css = {
   textTrigger: {
     cursor: 'pointer',
     padding: '14px',
-    border: 'none'
+    border: 'none',
+    fontWeight: 'bold'
   },
   menu: {
     position: 'relative',
