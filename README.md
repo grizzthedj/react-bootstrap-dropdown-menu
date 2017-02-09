@@ -54,21 +54,21 @@ class SettingsMenu extends React.Component {
 export default SettingsMenu;
 ```
 ## DropdownMenu props
-| Name         | Type     | Default                 | Possible Values              | Description     |
-| ------------ | -------- | ----------------------- | ---------------------------- | --------------- |
-| userName     | String   | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
-| position     | String   | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
-| triggerType  | String   | icon                    | icon, text, image            | The Type of drop trigger |
-| trigger      | String   | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
+| Name         | Type     | Required | Default                 | Possible Values              | Description     |
+| ------------ | -------- | -------- | ----------------------- | ---------------------------- | --------------- |
+| userName     | String   | No       | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
+| position     | String   | No       | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
+| triggerType  | String   | No       | icon                    | icon, text, image            | The Type of drop trigger |
+| trigger      | String   | No       | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
 
 ## MenuItem props
-| Name         | Type     | Default                 | Possible Values              | Description     |
-| ------------ | -------- | ----------------------- | ---------------------------- | --------------- |
-| key          | Number   | undefined               | Any integer value            | Must be unique for each MenuItem |
-| text         | String   | undefined               | Any String value             | Text value of the Link in the MenuItem |
-| location     | String   | undefined               | Any String value             | An absolute or relative path |
-| linkStyle    | Object   | inherited               | Hash containing javascript styles(not CSS). See [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public) for more info |  
-| onClick      | Function | undefined               | A Function                   | A function that will fire when the MenuItem Link is clicked |    
+| Name         | Type     | Required | Default                 | Possible Values              | Description     |
+| ------------ | -------- | -------- | ----------------------- | ---------------------------- | --------------- |
+| key          | Number   | Yes      | undefined               | Any integer value            | Must be unique for each MenuItem. Console errors will result if omitted. |
+| text         | String   | Yes      | undefined               | Any String value             | Text value of the Link in the MenuItem |
+| location     | String   | Yes      | undefined               | Any String value             | An absolute or relative path |
+| linkStyle    | Object   | No       | inherited               | Hash containing javascript styles(not CSS). See [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public) for more info |  
+| onClick      | Function | No       | undefined               | A Function                   | A function that will fire when the MenuItem Link is clicked |    
 
 ## Download Examples
 
