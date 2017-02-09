@@ -77,7 +77,7 @@ Browse http://localhost:8080
 * Other UI elements(i.e. bootstrp panels etc.) sometimes overlap
 
 | Prop Name    | Type     | Default                 | Possible Values              | Description     |
-| ------------ | -------- | ----------------------- | ---------------------------- | |
-| userName     | String   | undefined               | Any string(e.g. "John Doe")  | When provided, will render "Logged in as: {userName}" the top MenuItem |
-| triggerType  | String   | icon                    | "icon, text, image"              | The Type of drop trigger |
+| ------------ | -------- | ----------------------- | ---------------------------- | --------------- |
+| userName     | String   | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' the top MenuItem |
+| triggerType  | String   | icon                    | icon, text, image          | The Type of drop trigger |
 
