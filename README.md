@@ -76,3 +76,11 @@ Browse http://localhost:8080
 * Having 2(or more) instances on same page will cause the second, and all subsequent instances to not collapse when clicking outside of the menu. This is not an issue when there is only a single instance.
 * Other UI elements(i.e. bootstrp panels etc.) sometimes overlap
 
+| Prop Name    | Type     | Default                 | Possible Values              | Description     |
+| ------------ | -------- | ----------------------- | ---------------------------- | --------------- |
+| userName     | String   | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
+| position     | String   | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
+| triggerType  | String   | icon                    | icon, text, image            | The Type of drop trigger |
+| trigger      | String   | glyphicon glyphicon-cog | Depends on triggerType       | For 'icon' triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)
+For 'text' triggerType: Any String can be used
+For 'image' triggerType: Path to image(e.g. "/images/myimage.png") |
