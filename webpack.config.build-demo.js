@@ -8,8 +8,8 @@ module.exports = {
     app: ['./index.js','../src/App.js']
   },
   output: {
-    path: path.resolve(__dirname, './demo'),
-    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, './demo/public'),
+    filename: 'demo.js',
   },
   module: {
     loaders: [{

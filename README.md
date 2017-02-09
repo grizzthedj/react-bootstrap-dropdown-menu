@@ -14,7 +14,7 @@ Include bootstrap in your project(if not already included)
 
 ## Usage
 
-A simple example using OnClick events. Download and run the demo for more examples.
+A simple example using OnClick events. Download and run the demo for more examples, or browse the examples [here]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu)
 
 ![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619923/7ddd5d42-eacd-11e6-9bda-ee9be66cb64b.png)
 
@@ -69,9 +69,9 @@ Browse http://localhost:8080
 * Fix z-index issue with bootstrap panels
 * Error handling
 * Extend CSS styling so that user defined styles can be passed as props.
- 
+
 
 ## Known Bugs
 
 * Having 2(or more) instances on same page will cause the second, and all subsequent instances to not collapse when clicking outside of the menu. This is not an issue when there is only a single instance.
-* Other UI elements(i.e. bootstrp panels etc.) sometimes overlap 
+* Other UI elements(i.e. bootstrp panels etc.) sometimes overlap
