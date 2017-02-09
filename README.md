@@ -83,6 +83,4 @@ Browse http://localhost:8080
 | userName     | String   | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
 | position     | String   | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
 | triggerType  | String   | icon                    | icon, text, image            | The Type of drop trigger |
-| trigger      | String   | glyphicon glyphicon-cog | Depends on triggerType       | For 'icon' triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br>
-For 'text' triggerType: Any String can be used<br>
-For 'image' triggerType: Path to image(e.g. "/images/myimage.png") |
+| trigger      | String   | glyphicon glyphicon-cog | Depends on triggerType       | For 'icon' triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For 'text' triggerType: Any String can be used<br />For 'image' triggerType: Path to image(e.g. "/images/myimage.png") |
