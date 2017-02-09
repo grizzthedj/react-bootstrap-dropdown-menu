@@ -14,7 +14,7 @@ Include bootstrap in your project(if not already included)
 
 ## Usage
 
-A simple example using OnClick events. Download and run the demo for more examples, or browse the examples [here]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu)
+A simple example using OnClick events. Download and run the demo for more examples, or browse the examples [here]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public)
 
 ![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619923/7ddd5d42-eacd-11e6-9bda-ee9be66cb64b.png)
 
