@@ -1279,7 +1279,7 @@ var DropdownMenu = function (_React$Component) {
       if (this.props.userName) {
         return _react2.default.createElement(
           'div',
-          { key: '1' },
+          null,
           _react2.default.createElement(
             'p',
             null,
@@ -1303,41 +1303,46 @@ var DropdownMenu = function (_React$Component) {
           case "image":
             return _react2.default.createElement(
               'div',
-              { key: '1', onClick: this.toggleMenu },
+              { onClick: this.toggleMenu },
               _react2.default.createElement('img', { src: this.props.trigger, style: _Css2.default.imageTrigger, className: TRIGGER_CLASS })
             );
           case "text":
             return _react2.default.createElement(
               'div',
-              { key: '1', className: TRIGGER_CLASS, onClick: this.toggleMenu, style: _Css2.default.textTrigger },
+              { className: TRIGGER_CLASS, onClick: this.toggleMenu, style: _Css2.default.textTrigger },
               this.props.trigger,
               _react2.default.createElement('span', { className: 'glyphicon glyphicon-triangle-bottom', style: _Css2.default.triangle })
             );
           case "icon":
-            return _react2.default.createElement('span', { key: '1', className: this.props.trigger, style: _Css2.default.gear, onClick: this.toggleMenu });
+            return _react2.default.createElement('span', { className: this.props.trigger, style: _Css2.default.gear, onClick: this.toggleMenu });
           default:
-            throw "triggerType is not supported. Try 'image' or 'text' or 'icon'.";
+            throw "triggerType is not supported. Try 'image', 'text' or 'icon'.";
         }
       } else {
-        return _react2.default.createElement('span', { key: '1', className: 'glyphicon glyphicon-cog', style: _Css2.default.gear, onClick: this.toggleMenu });
+        return _react2.default.createElement('span', { className: 'glyphicon glyphicon-cog', style: _Css2.default.gear, onClick: this.toggleMenu });
       }
     }
   }, {
     key: 'getMenuStyle',
     value: function getMenuStyle() {
-      // Clone the current style
-      var menuStyle = JSON.parse(JSON.stringify(_Css2.default.menuContent));
+      var menuStyle = JSON.parse(JSON.stringify(_Css2.default.menuContent)); // Clone the current style
+      var position = this.props.position === undefined ? 'right' : this.props.position;
+      var supportedPositions = ['left', 'center', 'right'];
 
-      if (this.props.position) {
+      if (supportedPositions.indexOf(position.toLowerCase()) === -1) {
+        throw "position is not supported. Try 'left', 'center' or 'right'.";
+      }
+
+      if (position) {
         var baseWidth = parseInt(_Css2.default.menuContent.minWidth.replace('px', ''));
         var offset = 0;
         baseWidth = baseWidth - 40;
 
         // We need to use negative numbers as we are offsetting menu to the left
-        if (this.props.position === "center") {
+        if (position === "center") {
           offset = baseWidth / 2 * -1;
         }
-        if (this.props.position === "left") {
+        if (position === "left") {
           offset = baseWidth * -1;
         }
 
@@ -1349,21 +1354,17 @@ var DropdownMenu = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var userItem = [],
-          trigger = [];
-
-      userItem.push(this.showLoggedInUserName());
-      trigger.push(this.getTrigger());
-      var menuStyle = this.getMenuStyle();
-
+      if (this.props.children.length === 0) {
+        throw "DropdownMenu must have at least one MenuItem child.";
+      }
       return _react2.default.createElement(
         'div',
         { style: _Css2.default.menu },
-        trigger,
+        this.getTrigger(),
         _react2.default.createElement(
           'div',
-          { id: MENUITEMS_DIV, className: MENUITEMS_DIV, style: menuStyle },
-          userItem,
+          { id: MENUITEMS_DIV, className: MENUITEMS_DIV, style: this.getMenuStyle() },
+          this.showLoggedInUserName(),
           this.props.children
         )
       );
@@ -1430,8 +1431,12 @@ var MenuItem = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.type && this.props.type.toLowerCase() === 'separator') {
-        return _react2.default.createElement('hr', { width: '100%' });
+      if (this.props.type) {
+        if (this.props.type.toLowerCase() === 'separator') {
+          return _react2.default.createElement('hr', { width: '100%' });
+        } else {
+          throw "Unknown type for MenuItem. The only supported type is 'separator'.";
+        }
       } else {
         return _react2.default.createElement(
           'div',
@@ -12638,10 +12643,10 @@ var ClickEvent = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           null,
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/clickevent' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/clickevent' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Delete Account', onClick: this.deleteAccount }),
-          _react2.default.createElement(_MenuItem2.default, { key: '4', text: 'Logout', location: '/clickevent' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/clickevent' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/clickevent' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Delete Account', onClick: this.deleteAccount }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/clickevent' })
         ),
         _react2.default.createElement(
           'pre',
@@ -12688,13 +12693,13 @@ var ClickEvent = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/clickevent\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/clickevent\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/clickevent\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/clickevent\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Delete Account\' onClick={this.deleteAccount} />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Delete Account\' onClick={this.deleteAccount} />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'4\' text=\'Logout\' location=\'/clickevent\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/clickevent\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -12783,9 +12788,9 @@ var IconTrigger = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           { triggerType: 'icon', trigger: 'glyphicon glyphicon-headphones' },
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/icontrigger' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/icontrigger' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', location: '/icontrigger' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/icontrigger' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/icontrigger' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/icontrigger' })
         ),
         _react2.default.createElement(
           'pre',
@@ -12806,11 +12811,11 @@ var IconTrigger = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu triggerType=\'icon\' trigger=\'glyphicon glyphicon-headphones\'>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/icontrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/icontrigger\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/icontrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/icontrigger\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/icontrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/icontrigger\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -12904,9 +12909,9 @@ var ImageTrigger = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           { triggerType: 'image', trigger: '../images/trigger.png' },
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/imagetrigger' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/imagetrigger' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', location: '/imagetrigger' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/imagetrigger' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/imagetrigger' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/imagetrigger' })
         ),
         _react2.default.createElement(
           'pre',
@@ -12927,11 +12932,11 @@ var ImageTrigger = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu triggerType=\'image\' trigger=\'../images/trigger.png\'>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/imagetrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/imagetrigger\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/imagetrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/imagetrigger\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/imagetrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/imagetrigger\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -13090,9 +13095,9 @@ var LinkStyle = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           null,
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', linkStyle: Css.red, location: '/linkstyle' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', linkStyle: Css.red, location: '/linkstyle' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', linkStyle: Css.red, location: '/linkstyle' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', linkStyle: Css.red, location: '/linkstyle' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', linkStyle: Css.red, location: '/linkstyle' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', linkStyle: Css.red, location: '/linkstyle' })
         ),
         _react2.default.createElement(
           'pre',
@@ -13124,11 +13129,11 @@ var LinkStyle = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/linkstyle\' linkStyle={Css.red} />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/linkstyle\' linkStyle={Css.red} />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/linkstyle\' linkStyle={Css.red} />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/linkstyle\' linkStyle={Css.red} />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/linkstyle\' linkStyle={Css.red} />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/linkstyle\' linkStyle={Css.red} />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -13274,9 +13279,9 @@ var Position = function (_React$Component) {
                 _react2.default.createElement(
                   _DropdownMenu2.default,
                   { position: this.state.position },
-                  _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/simple' }),
-                  _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/simple' }),
-                  _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', location: '/simple' })
+                  _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/simple' }),
+                  _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/simple' }),
+                  _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/simple' })
                 )
               )
             )
@@ -13302,11 +13307,11 @@ var Position = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu position=\'right|center|left\'>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/simple\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/simple\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/simple\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/simple\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/simple\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/simple\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -13400,12 +13405,12 @@ var Separator = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           null,
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/separator' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/separator' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Permissions', location: '/separator' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '4', text: 'Search', location: '/separator' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '5', type: 'separator' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '6', text: 'Logout', location: '/separator' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/separator' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/separator' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Permissions', location: '/separator' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Search', location: '/separator' }),
+          _react2.default.createElement(_MenuItem2.default, { type: 'separator' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/separator' })
         ),
         _react2.default.createElement(
           'pre',
@@ -13426,17 +13431,17 @@ var Separator = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/separator\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/separator\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/separator\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/separator\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Permissions\' location=\'/separator\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Permissions\' location=\'/separator\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'4\' text=\'Search\' location=\'/separator\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Search\' location=\'/separator\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'5\' type=\'separator\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem type=\'separator\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'6\' text=\'Logout\' location=\'/separator\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/separator\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -13530,9 +13535,9 @@ var ShowUser = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           { userName: 'John Doe' },
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/showuser' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/showuser' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', location: '/showuser' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/showuser' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/showuser' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/showuser' })
         ),
         _react2.default.createElement(
           'pre',
@@ -13553,11 +13558,11 @@ var ShowUser = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu userName=\'John Doe\'>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/showuser\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/showuser\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/showuser\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/showuser\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/showuser\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/showuser\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -13651,9 +13656,9 @@ var Simple = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           null,
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/simple' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/simple' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', location: '/simple' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/simple' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/simple' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/simple' })
         ),
         _react2.default.createElement(
           'pre',
@@ -13674,11 +13679,11 @@ var Simple = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/simple\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/simple\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/simple\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/simple\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/simple\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/simple\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
@@ -13772,9 +13777,9 @@ var TextTrigger = function (_React$Component) {
         _react2.default.createElement(
           _DropdownMenu2.default,
           { triggerType: 'text', trigger: 'Settings' },
-          _react2.default.createElement(_MenuItem2.default, { key: '1', text: 'Home', location: '/texttrigger' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '2', text: 'Edit Profile', location: '/texttrigger' }),
-          _react2.default.createElement(_MenuItem2.default, { key: '3', text: 'Logout', location: '/texttrigger' })
+          _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/texttrigger' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/texttrigger' }),
+          _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/texttrigger' })
         ),
         _react2.default.createElement(
           'pre',
@@ -13795,11 +13800,11 @@ var TextTrigger = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu triggerType=\'text\' trigger=\'Settings\'>',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'1\' text=\'Home\' location=\'/texttrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/texttrigger\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'2\' text=\'Edit Profile\' location=\'/texttrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Edit Profile\' location=\'/texttrigger\' />',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem key=\'3\' text=\'Logout\' location=\'/texttrigger\' />',
+            '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Logout\' location=\'/texttrigger\' />',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0</DropdownMenu>',
             _react2.default.createElement('br', null),
