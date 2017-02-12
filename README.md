@@ -1,6 +1,6 @@
 # react-bootstrap-dropdown-menu
 
-![npm](https://img.shields.io/npm/v/npm.svg?style=plastic)](https://www.npmjs.com/package/react-bootstrap-dropdown-menu)
+[![NPM version][npm-badge]][npm]
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg?style=plastic)](https://github.com/grizzthedj/react-bootstrap-dropdown-menu)
 
 A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on websites where users login.
