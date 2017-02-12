@@ -43,12 +43,12 @@ class SettingsMenu extends React.Component {
   render() {
     return (
       <DropdownMenu userName="Chris Smith">
-        <MenuItem key="1" text="Home" location="/home" />
-        <MenuItem key="2" text="Edit Profile" location="/profile" />
-        <MenuItem key="3" text="Change Password" location="/change-password" />
-        <MenuItem key="4" text="Privacy Settings" location="/privacy-settings" />
-        <MenuItem key="5" text="Delete Account" onClick={this.deleteAccount} />
-        <MenuItem key="6" text="Logout" onClick={this.logout} />
+        <MenuItem text="Home" location="/home" />
+        <MenuItem text="Edit Profile" location="/profile" />
+        <MenuItem text="Change Password" location="/change-password" />
+        <MenuItem text="Privacy Settings" location="/privacy-settings" />
+        <MenuItem text="Delete Account" onClick={this.deleteAccount} />
+        <MenuItem text="Logout" onClick={this.logout} />
       </DropdownMenu>
     );
   }
