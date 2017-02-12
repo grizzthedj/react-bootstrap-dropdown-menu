@@ -1,9 +1,5 @@
 # react-bootstrap-dropdown-menu
 
-[![Dependency Status][deps-badge]][deps]
-[![devDependency Status][dev-deps-badge]][dev-deps]
-[![peerDependency Status][peer-deps-badge]][peer-deps]
-
 A simple Dropdown Menu for React. Commonly used as a 'User Settings' menu on websites where users login.
 
 ## Installation
