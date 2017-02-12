@@ -36,9 +36,9 @@ class Position extends React.Component {
             </td>
             <td>
               <DropdownMenu position={this.state.position}>
-                <MenuItem key="1" text="Home" location="/simple" />
-                <MenuItem key="2" text="Edit Profile" location="/simple" />
-                <MenuItem key="3" text="Logout" location="/simple" />
+                <MenuItem text="Home" location="/simple" />
+                <MenuItem text="Edit Profile" location="/simple" />
+                <MenuItem text="Logout" location="/simple" />
               </DropdownMenu>
             </td>
           </tr>
@@ -54,9 +54,9 @@ class Position extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu position='right|center|left'&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/simple' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/simple' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/simple' /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />

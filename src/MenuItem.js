@@ -16,8 +16,13 @@ class MenuItem extends React.Component {
   }
 
   render() {
-    if (this.props.type && this.props.type.toLowerCase() === 'separator') {
-      return (<hr width='100%' />)
+    if (this.props.type) {
+      if (this.props.type.toLowerCase() === 'separator') {
+        return (<hr width='100%' />)
+      }
+      else {
+        throw "Unknown type for MenuItem. The only supported type is 'separator'.";
+      }
     }
     else {
       return (

@@ -32,7 +32,7 @@ class DropdownMenu extends React.Component {
   showLoggedInUserName() {
     if (this.props.userName) {
       return (
-        <div key="1">
+        <div>
           <p>Logged in as: <br /><strong>{this.props.userName}</strong></p>
           <hr width="100%" />
         </div>
@@ -45,44 +45,49 @@ class DropdownMenu extends React.Component {
       switch(this.props.triggerType.toLowerCase()) {
         case "image":
           return (
-            <div key="1" onClick={this.toggleMenu}><img src={this.props.trigger} style={Css.imageTrigger} className={TRIGGER_CLASS} /></div>
+            <div onClick={this.toggleMenu}><img src={this.props.trigger} style={Css.imageTrigger} className={TRIGGER_CLASS} /></div>
           );
         case "text":
           return (
-            <div key="1" className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
+            <div className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
               {this.props.trigger}
               <span className="glyphicon glyphicon-triangle-bottom" style={Css.triangle}></span>
             </div>
           );
         case "icon":
           return (
-            <span key="1" className={this.props.trigger} style={Css.gear} onClick={this.toggleMenu}></span>
+            <span className={this.props.trigger} style={Css.gear} onClick={this.toggleMenu}></span>
           );
         default:
-          throw "triggerType is not supported. Try 'image' or 'text' or 'icon'.";
+          throw "triggerType is not supported. Try 'image', 'text' or 'icon'.";
       }
     }
     else {
       return (
-        <span key="1" className="glyphicon glyphicon-cog" style={Css.gear} onClick={this.toggleMenu}></span>
+        <span className="glyphicon glyphicon-cog" style={Css.gear} onClick={this.toggleMenu}></span>
       );
     }
   }
 
   getMenuStyle() {
-    // Clone the current style
-    var menuStyle = (JSON.parse(JSON.stringify(Css.menuContent)));
+    const menuStyle = (JSON.parse(JSON.stringify(Css.menuContent))); // Clone the current style
+    const position = this.props.position === undefined ? 'right' : this.props.position;
+    const supportedPositions = ['left', 'center', 'right'];
 
-    if (this.props.position) {
+    if (supportedPositions.indexOf(position.toLowerCase()) === -1) {
+      throw "position is not supported. Try 'left', 'center' or 'right'.";
+    }
+
+    if (position) {
       var baseWidth = parseInt(Css.menuContent.minWidth.replace('px',''));
       var offset = 0;
       baseWidth = baseWidth - 40;
 
       // We need to use negative numbers as we are offsetting menu to the left
-      if (this.props.position === "center") {
+      if (position === "center") {
         offset = (baseWidth / 2) * -1;
       }
-      if (this.props.position === "left") {
+      if (position === "left") {
         offset = baseWidth * -1;
       }
 
@@ -93,17 +98,14 @@ class DropdownMenu extends React.Component {
   }
 
   render() {
-    const userItem = [], trigger = [];
-
-    userItem.push(this.showLoggedInUserName());
-    trigger.push(this.getTrigger());
-    var menuStyle = this.getMenuStyle();
-
+    if (this.props.children.length === 0) {
+      throw "DropdownMenu must have at least one MenuItem child."
+    }
     return (
       <div style={Css.menu}>
-        {trigger}
-        <div id={MENUITEMS_DIV} className={MENUITEMS_DIV} style={menuStyle}>
-          {userItem}
+        {this.getTrigger()}
+        <div id={MENUITEMS_DIV} className={MENUITEMS_DIV} style={this.getMenuStyle()}>
+          {this.showLoggedInUserName()}
           {this.props.children}
         </div>
       </div>

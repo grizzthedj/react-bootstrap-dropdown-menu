@@ -11,9 +11,9 @@ class IconTrigger extends React.Component {
         <p>Click the bootstrap headphone icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu triggerType="icon" trigger="glyphicon glyphicon-headphones">
-          <MenuItem key="1" text="Home" location="/icontrigger" />
-          <MenuItem key="2" text="Edit Profile" location="/icontrigger" />
-          <MenuItem key="3" text="Logout" location="/icontrigger" />
+          <MenuItem text="Home" location="/icontrigger" />
+          <MenuItem text="Edit Profile" location="/icontrigger" />
+          <MenuItem text="Logout" location="/icontrigger" />
         </DropdownMenu>
 
         <pre><code>
@@ -24,9 +24,9 @@ class IconTrigger extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu triggerType='icon' trigger='glyphicon glyphicon-headphones'&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/icontrigger' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/icontrigger' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/icontrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/icontrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/icontrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/icontrigger' /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />

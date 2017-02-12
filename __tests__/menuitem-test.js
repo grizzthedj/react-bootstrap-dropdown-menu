@@ -17,11 +17,25 @@ describe('MenuItem', function() {
   });
 
   it('Should allow click events', () => {
-    const onLinkClick = function(){console.log('click')};
+    const onLinkClick = function() {console.log('click')};
     const menuItem = mount(
       <MenuItem onClick={onLinkClick} />
     );
     expect(menuItem.props().onClick);
+  });
+
+  it('Should ensure onClick is a fucntion', () => {
+    const onLinkClick = function() {console.log('click')};
+    const menuItem = mount(
+      <MenuItem onClick={onLinkClick} />
+    );
+    expect(typeof(menuItem.props().onClick) === "function");
+  });
+
+  it('MenuItem with invalid type specified should not mount', function() {
+    expect(() => {
+      shallow(<MenuItem type="foo" />);
+    }).toThrow();
   });
 
   it('Should allow styling via linkStyle prop', () => {

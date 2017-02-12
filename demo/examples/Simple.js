@@ -11,9 +11,9 @@ class Simple extends React.Component {
         <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu>
-          <MenuItem key="1" text="Home" location="/simple" />
-          <MenuItem key="2" text="Edit Profile" location="/simple" />
-          <MenuItem key="3" text="Logout" location="/simple" />
+          <MenuItem text="Home" location="/simple" />
+          <MenuItem text="Edit Profile" location="/simple" />
+          <MenuItem text="Logout" location="/simple" />
         </DropdownMenu>
 
         <pre><code>
@@ -24,9 +24,9 @@ class Simple extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/simple' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/simple' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/simple' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/simple' /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />

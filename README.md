@@ -14,7 +14,7 @@ Include bootstrap in your project(if not already included)
 
 ## Usage
 
-A simple example using OnClick events. Download and run the demo for more examples, or browse the examples [here]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public)
+A simple example using OnClick events. Download and run the demo for more examples, or browse the [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public).
 
 ![alt tag](https://cloud.githubusercontent.com/assets/9720835/22619923/7ddd5d42-eacd-11e6-9bda-ee9be66cb64b.png)
 
@@ -64,9 +64,9 @@ export default SettingsMenu;
 ## MenuItem props
 | Name         | Type     | Required | Default                 | Possible Values              | Description     |
 | ------------ | -------- | -------- | ----------------------- | ---------------------------- | --------------- |
-| key          | Number   | Yes      | undefined               | Any integer value            | Must be unique for each MenuItem. Console errors will result if omitted. |
+| type         | String   | No      | undefined                | separator                    | A horizontal rule. text prop is not required when using this type. |
 | text         | String   | Yes      | undefined               | Any String value             | Text value of the Link in the MenuItem |
-| location     | String   | Yes      | undefined               | Any String value             | An absolute or relative path |
+| location     | String   | No       | undefined               | Any String value             | An absolute or relative path |
 | linkStyle    | Object   | No       | inherited               | Hash containing javascript styles(not CSS). See [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public) for more info |  
 | onClick      | Function | No       | undefined               | A Function                   | A function that will fire when the MenuItem Link is clicked |    
 
@@ -83,7 +83,6 @@ Browse http://localhost:8080
 ## Backlog
 
 * More Error handling.
-* Handle MenuItem keys internally so that they don't have to be specified.
 * Extend CSS styling so that user defined styles can be passed in as props.
 
 ## Known Bugs

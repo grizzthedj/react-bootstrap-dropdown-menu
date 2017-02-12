@@ -16,9 +16,9 @@ class LinkStyle extends React.Component {
         <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu>
-          <MenuItem key="1" text="Home" linkStyle={Css.red} location="/linkstyle" />
-          <MenuItem key="2" text="Edit Profile" linkStyle={Css.red} location="/linkstyle" />
-          <MenuItem key="3" text="Logout" linkStyle={Css.red} location="/linkstyle" />
+          <MenuItem text="Home" linkStyle={Css.red} location="/linkstyle" />
+          <MenuItem text="Edit Profile" linkStyle={Css.red} location="/linkstyle" />
+          <MenuItem text="Logout" linkStyle={Css.red} location="/linkstyle" />
         </DropdownMenu>
 
         <pre><code>
@@ -35,9 +35,9 @@ class LinkStyle extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/linkstyle' linkStyle=&#123;Css.red&#125; /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />

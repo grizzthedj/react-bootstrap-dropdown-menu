@@ -11,9 +11,9 @@ class ImageTrigger extends React.Component {
         <p>Click the image below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu triggerType="image" trigger="../images/trigger.png">
-          <MenuItem key="1" text="Home" location="/imagetrigger" />
-          <MenuItem key="2" text="Edit Profile" location="/imagetrigger" />
-          <MenuItem key="3" text="Logout" location="/imagetrigger" />
+          <MenuItem text="Home" location="/imagetrigger" />
+          <MenuItem text="Edit Profile" location="/imagetrigger" />
+          <MenuItem text="Logout" location="/imagetrigger" />
         </DropdownMenu>
 
         <pre><code>
@@ -24,9 +24,9 @@ class ImageTrigger extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu triggerType='image' trigger='../images/trigger.png'&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/imagetrigger' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/imagetrigger' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/imagetrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/imagetrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/imagetrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/imagetrigger' /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />

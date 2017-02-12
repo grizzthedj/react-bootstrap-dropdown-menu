@@ -11,9 +11,9 @@ class TextTrigger extends React.Component {
         <p>Click the "Settings" below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu triggerType="text" trigger="Settings">
-          <MenuItem key="1" text="Home" location="/texttrigger" />
-          <MenuItem key="2" text="Edit Profile" location="/texttrigger" />
-          <MenuItem key="3" text="Logout" location="/texttrigger" />
+          <MenuItem text="Home" location="/texttrigger" />
+          <MenuItem text="Edit Profile" location="/texttrigger" />
+          <MenuItem text="Logout" location="/texttrigger" />
         </DropdownMenu>
 
         <pre><code>
@@ -24,9 +24,9 @@ class TextTrigger extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu triggerType='text' trigger='Settings'&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/texttrigger' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/texttrigger' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Logout' location='/texttrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/texttrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/texttrigger' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/texttrigger' /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />

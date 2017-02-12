@@ -25,10 +25,10 @@ class ClickEvent extends React.Component {
         <p>Click the bootstrap gear icon below to show the dropdown menu. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu>
-          <MenuItem key="1" text="Home" location="/clickevent" />
-          <MenuItem key="2" text="Edit Profile" location="/clickevent" />
-          <MenuItem key="3" text="Delete Account" onClick={this.deleteAccount} />
-          <MenuItem key="4" text="Logout" location="/clickevent" />
+          <MenuItem text="Home" location="/clickevent" />
+          <MenuItem text="Edit Profile" location="/clickevent" />
+          <MenuItem text="Delete Account" onClick={this.deleteAccount} />
+          <MenuItem text="Logout" location="/clickevent" />
         </DropdownMenu>
 
         <pre><code>
@@ -53,10 +53,10 @@ class ClickEvent extends React.Component {
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='1' text='Home' location='/clickevent' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='2' text='Edit Profile' location='/clickevent' /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='3' text='Delete Account' onClick=&#123;this.deleteAccount&#125; /&gt;<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem key='4' text='Logout' location='/clickevent' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Home' location='/clickevent' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Edit Profile' location='/clickevent' /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Delete Account' onClick=&#123;this.deleteAccount&#125; /&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MenuItem text='Logout' location='/clickevent' /&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/DropdownMenu&gt;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;)<br />
             &nbsp;&nbsp;&#125;<br />
