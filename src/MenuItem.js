@@ -21,7 +21,7 @@ class MenuItem extends React.Component {
         return (<hr width='100%' />)
       }
       else {
-        throw "Unknown type for MenuItem. The only supported type is 'separator'.";
+        throw "The value for prop 'type' is not supported for MenuItem. The only supported type is 'separator'.";
       }
     }
     else {

@@ -1241,7 +1241,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var MENUITEMS_DIV = '__react_bs_dd_menuItems';
 var TRIGGER_CLASS = '__react_bs_dd_trigger';
 
-window.onclick = function (e) {
+window.addEventListener("click", function (e) {
   var klass = e.target.className;
 
   if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.startsWith("glyphicon", 0)) {
@@ -1251,7 +1251,7 @@ window.onclick = function (e) {
       menuItemDiv.classList.remove('show');
     }
   }
-};
+});
 
 var DropdownMenu = function (_React$Component) {
   _inherits(DropdownMenu, _React$Component);
@@ -1316,7 +1316,7 @@ var DropdownMenu = function (_React$Component) {
           case "icon":
             return _react2.default.createElement('span', { className: this.props.trigger, style: _Css2.default.gear, onClick: this.toggleMenu });
           default:
-            throw "triggerType is not supported. Try 'image', 'text' or 'icon'.";
+            throw "The value for DropdownMenu 'triggerType' is not supported for DropdownMenu. Try 'image', 'text' or 'icon'.";
         }
       } else {
         return _react2.default.createElement('span', { className: 'glyphicon glyphicon-cog', style: _Css2.default.gear, onClick: this.toggleMenu });
@@ -1330,7 +1330,7 @@ var DropdownMenu = function (_React$Component) {
       var supportedPositions = ['left', 'center', 'right'];
 
       if (supportedPositions.indexOf(position.toLowerCase()) === -1) {
-        throw "position is not supported. Try 'left', 'center' or 'right'.";
+        throw "The value for 'position' prop is not supported for DropdownMenu. Try 'left', 'center' or 'right'.";
       }
 
       if (position) {
@@ -1435,7 +1435,7 @@ var MenuItem = function (_React$Component) {
         if (this.props.type.toLowerCase() === 'separator') {
           return _react2.default.createElement('hr', { width: '100%' });
         } else {
-          throw "Unknown type for MenuItem. The only supported type is 'separator'.";
+          throw "The value for prop 'type' is not supported for MenuItem. The only supported type is 'separator'.";
         }
       } else {
         return _react2.default.createElement(

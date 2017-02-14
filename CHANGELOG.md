@@ -21,3 +21,8 @@
 ## Features
 * Remove the need for adding key prop to MenuItem
 * Some additional error handling and tests
+
+<a name="v1.1.6"></a>
+# v1.1.6 (2017/02/13)
+## Features
+* Capturing outside menu clicks with window.addEventListener instead of window.onclick

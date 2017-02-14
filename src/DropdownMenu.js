@@ -4,7 +4,7 @@ import Css from './Css';
 const MENUITEMS_DIV = '__react_bs_dd_menuItems';
 const TRIGGER_CLASS = '__react_bs_dd_trigger';
 
-window.onclick = function(e) {
+window.addEventListener("click", function(e) {
   const klass = e.target.className;
 
   if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.startsWith("glyphicon", 0)) {
@@ -14,7 +14,7 @@ window.onclick = function(e) {
       menuItemDiv.classList.remove('show');
     }
   }
-};
+});
 
 class DropdownMenu extends React.Component {
   constructor() {
@@ -59,7 +59,7 @@ class DropdownMenu extends React.Component {
             <span className={this.props.trigger} style={Css.gear} onClick={this.toggleMenu}></span>
           );
         default:
-          throw "triggerType is not supported. Try 'image', 'text' or 'icon'.";
+          throw "The value for DropdownMenu 'triggerType' is not supported for DropdownMenu. Try 'image', 'text' or 'icon'.";
       }
     }
     else {
@@ -75,7 +75,7 @@ class DropdownMenu extends React.Component {
     const supportedPositions = ['left', 'center', 'right'];
 
     if (supportedPositions.indexOf(position.toLowerCase()) === -1) {
-      throw "position is not supported. Try 'left', 'center' or 'right'.";
+      throw "The value for 'position' prop is not supported for DropdownMenu. Try 'left', 'center' or 'right'.";
     }
 
     if (position) {
