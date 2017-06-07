@@ -1292,7 +1292,7 @@ var TRIGGER_CLASS = '__react_bs_dd_trigger';
 window.addEventListener("click", function (e) {
   var klass = e.target.className;
 
-  if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) === 0) {
+  if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
     var menuItemDiv = document.getElementById(MENUITEMS_DIV);
 
     if (menuItemDiv) {

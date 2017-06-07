@@ -26,3 +26,13 @@
 # v1.1.6 (2017/02/13)
 ## Features
 * Capturing outside menu clicks with window.addEventListener instead of window.onclick
+
+<a name="v1.1.10"></a>
+# v1.1.10 (2017/05/23)
+## Fixes
+* Adding babel-polyfill to keep IE11 happy
+
+<a name="v1.1.11"></a>
+# v1.1.11 (2017/06/07)
+## Fixes
+* Fixing outside menu click to collapse menu
