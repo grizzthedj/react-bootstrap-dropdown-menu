@@ -43,4 +43,4 @@
 * Reduced the amount of padding on the DropDownMenu separator
 * Allowed passing in width and height props for image trigger
 * Added carat beside image of image trigger so users more easily realize the dropdown functionality
-* New prop for carat colour
+* New prop for Dropdown carat colour
