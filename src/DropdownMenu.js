@@ -34,7 +34,7 @@ class DropdownMenu extends React.Component {
       return (
         <div>
           <p>Logged in as: <br /><strong>{this.props.userName}</strong></p>
-          <hr width="100%" />
+          <hr style={Css.separator} />
         </div>
       );
     }
@@ -44,14 +44,23 @@ class DropdownMenu extends React.Component {
     if (this.props.triggerType && this.props.trigger) {
       switch(this.props.triggerType.toLowerCase()) {
         case "image":
+          var triggerStyle = Css.imageTrigger;
+          var caratStyle = Css.triangle;
+
+          if (this.props.triggerWidth) { triggerStyle.width = this.props.triggerWidth; }
+          if (this.props.triggerHeight) { triggerStyle.height = this.props.triggerHeight; }
+          if (this.props.caratColor) { caratStyle.color = this.props.caratColor; }
+
           return (
-            <div onClick={this.toggleMenu}><img src={this.props.trigger} style={Css.imageTrigger} className={TRIGGER_CLASS} /></div>
+            <div onClick={this.toggleMenu}><img src={this.props.trigger} style={triggerStyle} className={TRIGGER_CLASS} />
+              <span className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
+            </div>
           );
         case "text":
           return (
             <div className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
               {this.props.trigger}
-              <span className="glyphicon glyphicon-triangle-bottom" style={Css.triangle}></span>
+              <span className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
             </div>
           );
         case "icon":

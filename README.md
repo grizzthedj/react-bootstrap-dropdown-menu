@@ -62,6 +62,9 @@ export default SettingsMenu;
 | position     | String   | No       | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
 | triggerType  | String   | No       | icon                    | icon, text, image            | The Type of drop trigger |
 | trigger      | String   | No       | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
+| triggerWidth | Sting    | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The width to render the image trigger image. |
+| triggerHeight | Sting    | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The height to render the image trigger image. |
+| caratColor    | String   | No       | #000000  (Black)       | Any 6 digit hex value (e.g. #F4E3A2)  | The color of the DropDown carat (for triggerType 'image' and 'text' only) 
 
 ## MenuItem props
 | Name         | Type     | Required | Default                 | Possible Values              | Description     |

@@ -36,3 +36,11 @@
 # v1.1.11 (2017/06/07)
 ## Fixes
 * Fixing outside menu click to collapse menu
+
+<a name="v1.1.12"></a>
+# v1.1.12 (2017/12/31)
+## Features and fixes
+* Reduced the amount of padding on the DropDownMenu separator
+* Allowed passing in width and height props for image trigger
+* Added carat beside image of image trigger so users more easily realize the dropdown functionality
+* New prop for carat colour

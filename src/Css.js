@@ -13,15 +13,15 @@ var Css = {
   triangle: {
     fontSize: '0.9em',
     cursor: 'pointer',
-    color: 'black',
+    color: '#000000',
     padding: '14px',
     border: 'none'
   },
   imageTrigger: {
-    height: '55px',
-    width: '65px',
+    height: '50px',
+    width: '50px',
     cursor: 'pointer',
-    padding: '14px',
+    padding: '3px',
     border: 'none'
   },
   textTrigger: {
@@ -50,6 +50,12 @@ var Css = {
   },
   show: {
     display: 'block'
+  },
+  separator: {
+    width: '100%',
+    padding: '3px',
+    marginTop: '10px',
+    marginBottom: '3px'
   }
 }
 
