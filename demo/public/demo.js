@@ -1339,7 +1339,7 @@ var DropdownMenu = function (_React$Component) {
               this.props.userName
             )
           ),
-          _react2.default.createElement('hr', { width: '100%' })
+          _react2.default.createElement('hr', { style: _Css2.default.separator })
         );
       }
     }
@@ -1349,17 +1349,31 @@ var DropdownMenu = function (_React$Component) {
       if (this.props.triggerType && this.props.trigger) {
         switch (this.props.triggerType.toLowerCase()) {
           case "image":
+            var triggerStyle = _Css2.default.imageTrigger;
+            var caratStyle = _Css2.default.triangle;
+
+            if (this.props.triggerWidth) {
+              triggerStyle.width = this.props.triggerWidth;
+            }
+            if (this.props.triggerHeight) {
+              triggerStyle.height = this.props.triggerHeight;
+            }
+            if (this.props.caratColor) {
+              caratStyle.color = this.props.caratColor;
+            }
+
             return _react2.default.createElement(
               'div',
               { onClick: this.toggleMenu },
-              _react2.default.createElement('img', { src: this.props.trigger, style: _Css2.default.imageTrigger, className: TRIGGER_CLASS })
+              _react2.default.createElement('img', { src: this.props.trigger, style: triggerStyle, className: TRIGGER_CLASS }),
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-triangle-bottom', style: caratStyle })
             );
           case "text":
             return _react2.default.createElement(
               'div',
               { className: TRIGGER_CLASS, onClick: this.toggleMenu, style: _Css2.default.textTrigger },
               this.props.trigger,
-              _react2.default.createElement('span', { className: 'glyphicon glyphicon-triangle-bottom', style: _Css2.default.triangle })
+              _react2.default.createElement('span', { className: 'glyphicon glyphicon-triangle-bottom', style: caratStyle })
             );
           case "icon":
             return _react2.default.createElement('span', { className: this.props.trigger, style: _Css2.default.gear, onClick: this.toggleMenu });
@@ -1481,7 +1495,7 @@ var MenuItem = function (_React$Component) {
     value: function render() {
       if (this.props.type) {
         if (this.props.type.toLowerCase() === 'separator') {
-          return _react2.default.createElement('hr', { width: '100%' });
+          return _react2.default.createElement('hr', { style: _Css2.default.separator });
         } else {
           throw "The value for prop 'type' is not supported for MenuItem. The only supported type is 'separator'.";
         }
@@ -8648,15 +8662,15 @@ var Css = {
   triangle: {
     fontSize: '0.9em',
     cursor: 'pointer',
-    color: 'black',
+    color: '#000000',
     padding: '14px',
     border: 'none'
   },
   imageTrigger: {
-    height: '55px',
-    width: '65px',
+    height: '50px',
+    width: '50px',
     cursor: 'pointer',
-    padding: '14px',
+    padding: '3px',
     border: 'none'
   },
   textTrigger: {
@@ -8685,6 +8699,12 @@ var Css = {
   },
   show: {
     display: 'block'
+  },
+  separator: {
+    width: '100%',
+    padding: '3px',
+    marginTop: '10px',
+    marginBottom: '3px'
   }
 };
 
@@ -13555,7 +13575,7 @@ var ImageTrigger = function (_React$Component) {
         ),
         _react2.default.createElement(
           _DropdownMenu2.default,
-          { triggerType: 'image', trigger: '../images/trigger.png' },
+          { triggerType: 'image', trigger: '../images/trigger.png', triggerWidth: '50px', triggerHeight: '50px', caratColor: '#FF0000' },
           _react2.default.createElement(_MenuItem2.default, { text: 'Home', location: '/imagetrigger' }),
           _react2.default.createElement(_MenuItem2.default, { text: 'Edit Profile', location: '/imagetrigger' }),
           _react2.default.createElement(_MenuItem2.default, { text: 'Logout', location: '/imagetrigger' })
@@ -13577,7 +13597,7 @@ var ImageTrigger = function (_React$Component) {
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0return (',
             _react2.default.createElement('br', null),
-            '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu triggerType=\'image\' trigger=\'../images/trigger.png\'>',
+            '\xA0\xA0\xA0\xA0\xA0\xA0<DropdownMenu triggerType=\'image\' trigger=\'../images/trigger.png\' triggerWidth=\'55px\' triggerHeight=\'55px\' caratColor=\'#FF0000\'>',
             _react2.default.createElement('br', null),
             '\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0<MenuItem text=\'Home\' location=\'/imagetrigger\' />',
             _react2.default.createElement('br', null),
