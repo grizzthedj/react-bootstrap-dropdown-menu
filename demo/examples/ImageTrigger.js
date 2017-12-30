@@ -20,7 +20,7 @@ class ImageTrigger extends React.Component {
           import React from 'react';<br />
           import &#123; DropdownMenu, MenuItem &#125; from 'react-bootstrap-dropdown-menu';<br />
           <br />
-          class Simple extends React.Component &#123;<br />
+          class ImageTrigger extends React.Component &#123;<br />
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu triggerType='image' trigger='../images/trigger.png' triggerWidth='55px' triggerHeight='55px' caratColor='#FF0000'&gt;<br />

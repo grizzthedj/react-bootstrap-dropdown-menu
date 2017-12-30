@@ -7,6 +7,7 @@ import Position from './Position';
 import ImageTrigger from './ImageTrigger';
 import TextTrigger from './TextTrigger';
 import IconTrigger from './IconTrigger';
+import FadeIn from './FadeIn';
 
 export {
   Simple,
@@ -17,5 +18,6 @@ export {
   Position,
   ImageTrigger,
   TextTrigger,
-  IconTrigger
+  IconTrigger,
+  FadeIn
 }

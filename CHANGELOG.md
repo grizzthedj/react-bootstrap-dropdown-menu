@@ -44,3 +44,9 @@
 * Allowed passing in width and height props for image trigger
 * Added carat beside image of image trigger so users more easily realize the dropdown functionality
 * New prop for Dropdown carat colour
+
+<a name="v1.1.14"></a>
+# v1.1.14 (2017/12/30)
+## Features
+* Added toggling of the carat when expanding/collapsing the menu
+* Added prop for a fade in effect
