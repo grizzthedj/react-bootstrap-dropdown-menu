@@ -2,16 +2,22 @@ import React from 'react';
 import Css from './Css';
 
 const MENUITEMS_DIV = '__react_bs_dd_menuItems';
+const CARAT_CLASS = '__react_bs_dd_carat';
 const TRIGGER_CLASS = '__react_bs_dd_trigger';
 
 window.addEventListener("click", function(e) {
   const klass = e.target.className;
+  const carat = document.getElementById(CARAT_CLASS);
 
-  if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.startsWith("glyphicon", 0)) {
+  if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
     var menuItemDiv = document.getElementById(MENUITEMS_DIV);
 
     if (menuItemDiv) {
       menuItemDiv.classList.remove('show');
+
+      if (carat) {
+        carat.className = "glyphicon glyphicon-triangle-bottom";
+      }
     }
   }
 });
@@ -24,9 +30,41 @@ class DropdownMenu extends React.Component {
 
   toggleMenu(e) {
     const items = document.getElementById(MENUITEMS_DIV);
+
     if (items) {
       items.classList.toggle("show");
+      if (this.props.fadeIn && this.props.fadeIn == "true") {
+        this.fadeIn(document.getElementById(MENUITEMS_DIV));
+      }
+      this.toggleArrow(e);
     }
+  }
+
+  toggleArrow(e) {
+    const carat = document.getElementById(CARAT_CLASS);
+
+    if (carat) {
+      if (carat.className === "glyphicon glyphicon-triangle-top") {
+        carat.className = "glyphicon glyphicon-triangle-bottom";
+      }
+      else {
+        carat.className = "glyphicon glyphicon-triangle-top";
+      }
+    }
+  }
+
+  fadeIn(element) {
+    element.style.opacity = 0;
+
+    var tick = function() {
+      element.style.opacity = +element.style.opacity + 0.04;
+
+      if (+element.style.opacity < 1) {
+        (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+      }
+    };
+
+    tick();
   }
 
   showLoggedInUserName() {
@@ -34,7 +72,7 @@ class DropdownMenu extends React.Component {
       return (
         <div>
           <p>Logged in as: <br /><strong>{this.props.userName}</strong></p>
-          <hr width="100%" />
+          <hr style={Css.separator} />
         </div>
       );
     }
@@ -44,14 +82,24 @@ class DropdownMenu extends React.Component {
     if (this.props.triggerType && this.props.trigger) {
       switch(this.props.triggerType.toLowerCase()) {
         case "image":
+          var triggerStyle = Css.imageTrigger;
+          var caratStyle = Css.triangle;
+
+          if (this.props.triggerWidth) { triggerStyle.width = this.props.triggerWidth; }
+          if (this.props.triggerHeight) { triggerStyle.height = this.props.triggerHeight; }
+          if (this.props.caratColor) { caratStyle.color = this.props.caratColor; }
+
           return (
-            <div onClick={this.toggleMenu}><img src={this.props.trigger} style={Css.imageTrigger} className={TRIGGER_CLASS} /></div>
+            <div onClick={this.toggleMenu}>
+              <img src={this.props.trigger} style={triggerStyle} className={TRIGGER_CLASS} />
+              <span id={CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
+            </div>
           );
         case "text":
           return (
             <div className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
-              {this.props.trigger}
-              <span className="glyphicon glyphicon-triangle-bottom" style={Css.triangle}></span>
+              {this.props.trigger}&nbsp;&nbsp;
+              <span id={CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
             </div>
           );
         case "icon":
@@ -101,6 +149,7 @@ class DropdownMenu extends React.Component {
     if (this.props.children.length === 0) {
       throw "DropdownMenu must have at least one MenuItem child."
     }
+
     return (
       <div style={Css.menu}>
         {this.getTrigger()}

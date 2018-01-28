@@ -20,7 +20,7 @@ class IconTrigger extends React.Component {
           import React from 'react';<br />
           import &#123; DropdownMenu, MenuItem &#125; from 'react-bootstrap-dropdown-menu';<br />
           <br />
-          class Simple extends React.Component &#123;<br />
+          class IconTrigger extends React.Component &#123;<br />
             &nbsp;&nbsp;render() &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;DropdownMenu triggerType='icon' trigger='glyphicon glyphicon-headphones'&gt;<br />

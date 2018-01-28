@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import App from './App';
 import {
   Simple, ShowUser, LinkStyle, ClickEvent,
-  Separator, Position, ImageTrigger, TextTrigger, IconTrigger
+  Separator, Position, ImageTrigger, TextTrigger, IconTrigger, FadeIn
 } from './examples/Index';
 
 render((
@@ -19,5 +19,6 @@ render((
     <Route path="/imagetrigger" component={ImageTrigger} />
     <Route path="/texttrigger" component={TextTrigger} />
     <Route path="/icontrigger" component={IconTrigger} />
+    <Route path="/fadein" component={FadeIn} />
   </Router>
 ), document.getElementById('app'))
