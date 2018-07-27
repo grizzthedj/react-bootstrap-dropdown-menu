@@ -1,47 +1,33 @@
 import React from 'react';
 import Css from './Css';
 
-const MENUITEMS_DIV = '__react_bs_dd_menuItems';
-const CARAT_CLASS = '__react_bs_dd_carat';
-const TRIGGER_CLASS = '__react_bs_dd_trigger';
-
-window.addEventListener("click", function(e) {
-  const klass = e.target.className;
-  const carat = document.getElementById(CARAT_CLASS);
-
-  if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
-    var menuItemDiv = document.getElementById(MENUITEMS_DIV);
-
-    if (menuItemDiv) {
-      menuItemDiv.classList.remove('show');
-
-      if (carat) {
-        carat.className = "glyphicon glyphicon-triangle-bottom";
-      }
-    }
-  }
-});
+var instances = 0;
 
 class DropdownMenu extends React.Component {
   constructor() {
     super();
     this.toggleMenu = this.toggleMenu.bind(this);
+    instances += 1;
+
+    this.MENUITEMS_DIV = '__react_bs_dd_menuItems_' + instances;
+    this.CARAT_CLASS = '__react_bs_dd_carat_' + instances;
+    this.TRIGGER_CLASS = '__react_bs_dd_trigger_' + instances;
   }
 
   toggleMenu(e) {
-    const items = document.getElementById(MENUITEMS_DIV);
+    const items = document.getElementById(this.MENUITEMS_DIV);
 
     if (items) {
       items.classList.toggle("show");
       if (this.props.fadeIn && this.props.fadeIn == "true") {
-        this.fadeIn(document.getElementById(MENUITEMS_DIV));
+        this.fadeIn(document.getElementById(this.MENUITEMS_DIV));
       }
       this.toggleArrow(e);
     }
   }
 
   toggleArrow(e) {
-    const carat = document.getElementById(CARAT_CLASS);
+    const carat = document.getElementById(this.CARAT_CLASS);
 
     if (carat) {
       if (carat.className === "glyphicon glyphicon-triangle-top") {
@@ -91,15 +77,15 @@ class DropdownMenu extends React.Component {
 
           return (
             <div onClick={this.toggleMenu}>
-              <img src={this.props.trigger} style={triggerStyle} className={TRIGGER_CLASS} />
-              <span id={CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
+              <img src={this.props.trigger} style={triggerStyle} className={this.TRIGGER_CLASS} />
+              <span id={this.CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
             </div>
           );
         case "text":
           return (
-            <div className={TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
+            <div className={this.TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
               {this.props.trigger}&nbsp;&nbsp;
-              <span id={CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
+              <span id={this.CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
             </div>
           );
         case "icon":
@@ -145,6 +131,29 @@ class DropdownMenu extends React.Component {
     return menuStyle;
   }
 
+  componentWillMount() {
+    const TRIGGER_CLASS = this.TRIGGER_CLASS;
+    const MENUITEMS_DIV = this.MENUITEMS_DIV;
+    const CARAT_CLASS = this.CARAT_CLASS;
+
+    window.addEventListener("click", function(e) {
+      const klass = e.target.className;
+      const carat = document.getElementById(CARAT_CLASS);
+
+      if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
+        var menuItemDiv = document.getElementById(MENUITEMS_DIV);
+
+        if (menuItemDiv) {
+          menuItemDiv.classList.remove('show');
+
+          if (carat) {
+            carat.className = "glyphicon glyphicon-triangle-bottom";
+          }
+        }
+      }
+    });
+  }
+
   render() {
     if (this.props.children.length === 0) {
       throw "DropdownMenu must have at least one MenuItem child."
@@ -153,7 +162,7 @@ class DropdownMenu extends React.Component {
     return (
       <div style={Css.menu}>
         {this.getTrigger()}
-        <div id={MENUITEMS_DIV} className={MENUITEMS_DIV} style={this.getMenuStyle()}>
+        <div id={this.MENUITEMS_DIV} className={this.MENUITEMS_DIV} style={this.getMenuStyle()}>
           {this.showLoggedInUserName()}
           {this.props.children}
         </div>

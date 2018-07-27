@@ -21,6 +21,7 @@ class App extends React.Component {
           <li><Link to="/imagetrigger">Image Trigger</Link></li>
           <li><Link to="/texttrigger">Text Trigger</Link></li>
           <li><Link to="/icontrigger">Bootstrap Icon Trigger</Link></li>
+          <li><Link to="/multiple">Multiple Instances</Link></li>
         </ul>
       </div>
     );

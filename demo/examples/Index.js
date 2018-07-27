@@ -8,6 +8,7 @@ import ImageTrigger from './ImageTrigger';
 import TextTrigger from './TextTrigger';
 import IconTrigger from './IconTrigger';
 import FadeIn from './FadeIn';
+import Multiple from './Multiple';
 
 export {
   Simple,
@@ -19,5 +20,6 @@ export {
   ImageTrigger,
   TextTrigger,
   IconTrigger,
-  FadeIn
+  FadeIn,
+  Multiple
 }
