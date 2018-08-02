@@ -52,6 +52,6 @@
 * Added prop for a fade in effect
 
 <a name="v1.1.15"></a>
-# v1.1.14 (2018/7/27)
+# v1.1.15 (2018/7/27)
 ## Features
 * Added support for multiple instances on the same page
