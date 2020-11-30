@@ -55,3 +55,10 @@
 # v1.1.15 (2018/7/27)
 ## Features
 * Added support for multiple instances on the same page
+
+<a name="v1.1.18"></a>
+# v1.1.18 (2020/11/30)
+## Features
+* Added iconColor prop to DropdownMenu
+* Added disabled prop to MenuItem
+* Bumped devDependencies versions

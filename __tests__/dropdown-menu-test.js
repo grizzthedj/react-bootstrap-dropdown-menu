@@ -1,9 +1,14 @@
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
-import { mount, shallow, render } from 'enzyme';
+import ReactTestUtils from 'react-dom/test-utils';
+import { mount, shallow, render, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import nock from 'nock';
 import DropdownMenu from '../src/DropdownMenu';
 import MenuItem from '../src/MenuItem';
+
+configure({ 
+  adapter: new Adapter()
+});
 
 describe('DropdownMenu', function() {
   let menuItemDiv = ".__react_bs_dd_menuItems";
@@ -31,7 +36,7 @@ describe('DropdownMenu', function() {
   });
 
   it('DropdownMenu with trigger and triggerType specified should mount', function() {
-    const menu = mount(
+    const menu = shallow(
       <DropdownMenu trigger="Settings" triggerType="text">
         <MenuItem text="Click Me" location="/somewhere" />
       </DropdownMenu>
@@ -41,12 +46,12 @@ describe('DropdownMenu', function() {
 
   it('DropdownMenu with unknown triggerType should not mount', function() {
     expect(() => {
-      mount(<DropdownMenu trigger="Settings" triggerType="unknown" />);
+      shallow(<DropdownMenu trigger="Settings" triggerType="unknown" />);
     }).toThrow();
   });
 
   it('DropdownMenu with position specified should mount', function() {
-    const menu = mount(
+    const menu = shallow(
       <DropdownMenu position="left">
         <MenuItem text="Click Me" location="/somewhere" />
       </DropdownMenu>
@@ -60,8 +65,8 @@ describe('DropdownMenu', function() {
     }).toThrow();
   });
 
-  it('DropdownMenu with child MenuItem should mount', function() {
-    const menu = mount(
+  it('DropdownMenu with child MenuItem should render', function() {
+    const menu = render(
       <DropdownMenu>
         <MenuItem text="Click Me" location="/somewhere" />
       </DropdownMenu>
@@ -88,7 +93,7 @@ describe('DropdownMenu', function() {
   });
 
   it('Should render child MenuItems', () => {
-    const menu = shallow(
+    const menu = mount(
       <DropdownMenu>
         <MenuItem text="Click" location="/here" />
         <MenuItem text="Or" location="/here" />

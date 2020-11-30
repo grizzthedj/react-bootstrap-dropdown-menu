@@ -12,6 +12,7 @@ import FadeIn from './FadeIn';
 import Multiple from './Multiple';
 import OtherDropDown from './OtherDropDown';
 import IconColor from './IconColor';
+import DisabledItem from './DisabledItem';
 
 export {
   Home,
@@ -27,5 +28,6 @@ export {
   FadeIn,
   Multiple,
   OtherDropDown,
-  IconColor
+  IconColor,
+  DisabledItem
 }

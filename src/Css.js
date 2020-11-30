@@ -3,6 +3,11 @@ var Css = {
   pointer: {
     cursor: 'pointer'
   },
+  disabledItem: {
+    pointerEvents: 'none', 
+    cursor: 'default',
+    color: 'grey'
+  },
   gear: {
     fontSize: '1.7em',
     cursor: 'pointer',
