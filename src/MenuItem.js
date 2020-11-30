@@ -9,7 +9,7 @@ class MenuItem extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if(this.props.linkStyle) {
       this.setState({linkStyle: this.props.linkStyle})
     }

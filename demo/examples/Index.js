@@ -1,3 +1,4 @@
+import Home from './Home';
 import Simple from './Simple';
 import ShowUser from './ShowUser';
 import LinkStyle from './LinkStyle';
@@ -9,8 +10,11 @@ import TextTrigger from './TextTrigger';
 import IconTrigger from './IconTrigger';
 import FadeIn from './FadeIn';
 import Multiple from './Multiple';
+import OtherDropDown from './OtherDropDown';
+import IconColor from './IconColor';
 
 export {
+  Home,
   Simple,
   ShowUser,
   LinkStyle,
@@ -21,5 +25,7 @@ export {
   TextTrigger,
   IconTrigger,
   FadeIn,
-  Multiple
+  Multiple,
+  OtherDropDown,
+  IconColor
 }

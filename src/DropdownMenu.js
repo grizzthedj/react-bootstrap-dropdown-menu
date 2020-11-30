@@ -65,6 +65,12 @@ class DropdownMenu extends React.Component {
   }
 
   getTrigger() {
+    var iconCss = {...Css.gear};
+
+    if (this.props.iconColor) { 
+      iconCss.color = this.props.iconColor; 
+    }
+
     if (this.props.triggerType && this.props.trigger) {
       switch(this.props.triggerType.toLowerCase()) {
         case "image":
@@ -90,7 +96,7 @@ class DropdownMenu extends React.Component {
           );
         case "icon":
           return (
-            <span className={this.props.trigger} style={Css.gear} onClick={this.toggleMenu}></span>
+            <span className={this.props.trigger} style={iconCss} onClick={this.toggleMenu}></span>
           );
         default:
           throw "The value for DropdownMenu 'triggerType' is not supported for DropdownMenu. Try 'image', 'text' or 'icon'.";
@@ -98,7 +104,7 @@ class DropdownMenu extends React.Component {
     }
     else {
       return (
-        <span className="glyphicon glyphicon-cog" style={Css.gear} onClick={this.toggleMenu}></span>
+        <span className="glyphicon glyphicon-cog" style={iconCss} onClick={this.toggleMenu}></span>
       );
     }
   }
@@ -131,7 +137,7 @@ class DropdownMenu extends React.Component {
     return menuStyle;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const TRIGGER_CLASS = this.TRIGGER_CLASS;
     const MENUITEMS_DIV = this.MENUITEMS_DIV;
     const CARAT_CLASS = this.CARAT_CLASS;
