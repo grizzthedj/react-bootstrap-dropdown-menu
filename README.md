@@ -73,6 +73,7 @@ export default SettingsMenu;
 | ------------ | -------- | -------- | ----------------------- | ---------------------------- | --------------- |
 | type         | String   | No      | undefined                | separator                    | A horizontal rule. text prop is not required when using this type. |
 | text         | String   | Yes      | undefined               | Any String value             | Text value of the Link in the MenuItem |
+| disabled     | Boolean  | No       | false                   | true or false                | Disables a MenuItem |
 | location     | String   | No       | undefined               | Any String value             | An absolute or relative path |
 | linkStyle    | Object   | No       | inherited               | Hash containing javascript styles(not CSS). See [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public) for more info |  
 | onClick      | Function | No       | undefined               | A Function                   | A function that will fire when the MenuItem Link is clicked |    
