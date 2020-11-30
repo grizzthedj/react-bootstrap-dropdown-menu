@@ -65,6 +65,7 @@ export default SettingsMenu;
 | triggerWidth | String    | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The width to render the image trigger image. |
 | triggerHeight | String    | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The height to render the image trigger image. |
 | caratColor    | String   | No       | #000000  (Black)       | Any 6 digit hex value (e.g. #F4E3A2)  | The color of the DropDown carat (for triggerType 'image' and 'text' only)
+| iconColor    | String   | No       | #000000  (Black)       | Any 6 digit hex value (e.g. #F4E3A2)  | The color of the Bootstrap icon
 | fadeIn        | Boolean  | No       | false                  | true or false                 | Dropdown menu will fade in when set to true
 
 ## MenuItem props

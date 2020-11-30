@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   context: path.resolve(__dirname, './demo'),
   entry: {
     app: ['./index.js','../src/App.js']
@@ -12,13 +13,13 @@ module.exports = {
     filename: 'demo.js',
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets:['es2015','react']
-      }
+      loader: 'babel-loader'
+      // query: {
+      //   presets:["@babel/preset-env", "@babel/preset-react"]
+      // }
     }]
   }
 };
