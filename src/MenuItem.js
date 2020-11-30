@@ -2,10 +2,21 @@ import React from 'react';
 import Css from './Css';
 
 class MenuItem extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    let linkStyle = Css.pointer;
+
+    if (this.props.disabled) {
+      if (this.props.disabled === "true") {
+        linkStyle = Css.disabledItem;
+      }
+      else if (this.props.disabled !== "false") {
+        throw "The value for prop 'disabled' is not supported for MenuItem. Must be true or false.";
+      }
+    }
+
     this.state = {
-      linkStyle: Css.pointer
+      linkStyle: linkStyle
     }
   }
 
