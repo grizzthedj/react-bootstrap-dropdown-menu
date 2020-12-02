@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import App from './App';
 
 render((
-  <BrowserRouter basename="/demo/public">
+  <BrowserRouter basename="/react-bootstrap-dropdown-menu/demo/public">
     <App />
   </BrowserRouter>
 ), document.getElementById('app'))
