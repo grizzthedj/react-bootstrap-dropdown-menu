@@ -4,10 +4,11 @@
   "description": "A simple Dropdown Menu for React. Commonly used as a user 'Settings' menu on websites where users login.",
   "main": "dist/App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "git-deploy": "gulp build && gh-pages -d demo/public"
   },
   "repository": "https://github.com/grizzthedj/react-bootstrap-dropdown-menu.git",
-  "homepage": "",
+  "homepage": "https://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public",
   "keywords": [
     "react",
     "dropdown",
@@ -26,6 +27,7 @@
     "del": "^6.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
+    "gh-pages": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-cli": "^2.3.0",
