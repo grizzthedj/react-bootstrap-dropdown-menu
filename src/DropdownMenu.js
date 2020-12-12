@@ -165,6 +165,10 @@ class DropdownMenu extends React.Component {
       const klass = e.target.className;
       const carat = document.getElementById(CARAT_CLASS);
 
+      if (parseInt(klass) === klass) {
+        return;
+      }
+
       if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
         var menuItemDiv = document.getElementById(MENUITEMS_DIV);
 
