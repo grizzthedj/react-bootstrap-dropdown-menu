@@ -1,5 +1,5 @@
 import React from 'react';
-import Css from './Css';
+import DefaultCss from './Css';
 
 var instances = 0;
 
@@ -58,24 +58,42 @@ class DropdownMenu extends React.Component {
       return (
         <div>
           <p>Logged in as: <br /><strong>{this.props.userName}</strong></p>
-          <hr style={Css.separator} />
+          <hr style={DefaultCss.separator} />
         </div>
       );
     }
   }
 
+  getCss() {
+    var propsCss = {...this.props.css};
+    var css = {...DefaultCss};
+
+    if (propsCss) {
+      Object.keys(propsCss).forEach(function(key){
+        css[key] = {...DefaultCss[key], ...propsCss[key]}
+      });
+    }
+
+    return css;
+  }
+
   getTrigger() {
-    var iconCss = {...Css.gear};
+    const css = this.getCss();
+    var iconCss = {...DefaultCss.gear};
 
     if (this.props.iconColor) { 
       iconCss.color = this.props.iconColor; 
+    }
+    // Override iconColor if it is present in css prop
+    if (this.props.css && this.props.css.gear.color) {
+      iconCss.color = this.props.css.gear.color;
     }
 
     if (this.props.triggerType && this.props.trigger) {
       switch(this.props.triggerType.toLowerCase()) {
         case "image":
-          var triggerStyle = Css.imageTrigger;
-          var caratStyle = Css.triangle;
+          var triggerStyle =css.imageTrigger;
+          var caratStyle = css.triangle;
 
           if (this.props.triggerWidth) { triggerStyle.width = this.props.triggerWidth; }
           if (this.props.triggerHeight) { triggerStyle.height = this.props.triggerHeight; }
@@ -89,7 +107,7 @@ class DropdownMenu extends React.Component {
           );
         case "text":
           return (
-            <div className={this.TRIGGER_CLASS} onClick={this.toggleMenu} style={Css.textTrigger}>
+            <div className={this.TRIGGER_CLASS} onClick={this.toggleMenu} style={css.textTrigger}>
               {this.props.trigger}&nbsp;&nbsp;
               <span id={this.CARAT_CLASS} className="glyphicon glyphicon-triangle-bottom" style={caratStyle}></span>
             </div>
@@ -110,7 +128,8 @@ class DropdownMenu extends React.Component {
   }
 
   getMenuStyle() {
-    const menuStyle = (JSON.parse(JSON.stringify(Css.menuContent))); // Clone the current style
+    const css = this.getCss();
+    const menuStyle = (JSON.parse(JSON.stringify(css.menuContent))); // Clone the current style
     const position = this.props.position === undefined ? 'right' : this.props.position;
     const supportedPositions = ['left', 'center', 'right'];
 
@@ -119,7 +138,7 @@ class DropdownMenu extends React.Component {
     }
 
     if (position) {
-      var baseWidth = parseInt(Css.menuContent.minWidth.replace('px',''));
+      var baseWidth = parseInt(DefaultCss.menuContent.minWidth.replace('px',''));
       var offset = 0;
       baseWidth = baseWidth - 40;
 
@@ -166,7 +185,7 @@ class DropdownMenu extends React.Component {
     }
 
     return (
-      <div style={Css.menu}>
+      <div style={DefaultCss.menu}>
         {this.getTrigger()}
         <div id={this.MENUITEMS_DIV} className={this.MENUITEMS_DIV} style={this.getMenuStyle()}>
           {this.showLoggedInUserName()}

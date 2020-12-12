@@ -7,7 +7,7 @@ class DisabledItem extends React.Component {
   render() {
     return (
       <div style={{marginLeft: '30px'}}>
-        <h3>Simple Dropdown Menu</h3>
+        <h3>Dropdown Menu with disabled MenuItem</h3>
         <p>Click the bootstrap gear icon below to show the dropdown menu with a disabled MenuItem. &nbsp;<Link to="/">Back</Link></p>
 
         <DropdownMenu>

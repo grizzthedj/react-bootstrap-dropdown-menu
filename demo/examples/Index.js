@@ -13,6 +13,7 @@ import Multiple from './Multiple';
 import OtherDropDown from './OtherDropDown';
 import IconColor from './IconColor';
 import DisabledItem from './DisabledItem';
+import CssOverride from './CssOverride';
 
 export {
   Home,
@@ -29,5 +30,6 @@ export {
   Multiple,
   OtherDropDown,
   IconColor,
-  DisabledItem
+  DisabledItem,
+  CssOverride
 }
