@@ -1,14 +1,14 @@
 import React from 'react';
-import Css from './Css';
+import DefaultCss from './Css';
 
 class MenuItem extends React.Component {
   constructor(props) {
     super(props);
-    let linkStyle = Css.pointer;
+    let linkStyle = DefaultCss.pointer;
 
     if (this.props.disabled) {
       if (this.props.disabled === "true") {
-        linkStyle = Css.disabledItem;
+        linkStyle = DefaultCss.disabledItem;
       }
       else if (this.props.disabled !== "false") {
         throw "The value for prop 'disabled' is not supported for MenuItem. Must be true or false.";
@@ -29,7 +29,7 @@ class MenuItem extends React.Component {
   render() {
     if (this.props.type) {
       if (this.props.type.toLowerCase() === 'separator') {
-        return (<hr style={Css.separator} />)
+        return (<hr style={DefaultCss.separator} />)
       }
       else {
         throw "The value for prop 'type' is not supported for MenuItem. The only supported type is 'separator'.";

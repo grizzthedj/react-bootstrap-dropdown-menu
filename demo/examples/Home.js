@@ -15,8 +15,9 @@ class Home extends React.Component {
           <li><Link to="/showuser">Show Logged In User</Link></li>
           <li><Link to="/fadein">Dropdown Menu with Fade In effect</Link></li>
           <li><Link to="/linkstyle">Edit Link Style</Link></li>
+          <li><Link to="/cssoverride">Dropdown Menu with CSS(as JS) override</Link></li>
           <li><Link to="/clickevent">MenuItem with OnClick Event</Link></li>
-          <li><Link to="/disabled">With disabled MenuItem</Link></li>
+          <li><Link to="/disabled">Dropdown Menu with disabled MenuItem</Link></li>
           <li><Link to="/position">Change Drop Position</Link></li>
           <li><Link to="/imagetrigger">Image Trigger</Link></li>
           <li><Link to="/texttrigger">Text Trigger</Link></li>

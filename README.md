@@ -59,6 +59,7 @@ export default SettingsMenu;
 | Name         | Type     | Required | Default                 | Possible Values              | Description     |
 | ------------ | -------- | -------- | ----------------------- | ---------------------------- | --------------- |
 | userName     | String   | No       | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
+| css          | Object   | No       | See Css below           | Object as with attributes as described below | CSS as JS variables to be overridden
 | position     | String   | No       | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
 | triggerType  | String   | No       | icon                    | icon, text, image            | The Type of drop trigger |
 | trigger      | String   | No       | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
@@ -77,6 +78,56 @@ export default SettingsMenu;
 | location     | String   | No       | undefined               | Any String value             | An absolute or relative path |
 | linkStyle    | Object   | No       | inherited               | Hash containing javascript styles(not CSS). See [examples]( http://grizzthedj.github.io/react-bootstrap-dropdown-menu/demo/public) for more info |  
 | onClick      | Function | No       | undefined               | A Function                   | A function that will fire when the MenuItem Link is clicked |    
+
+## Css Override
+
+The following CSS(as JS) can be passed to the `DropdownMenu` via the `css` prop to override color, padding etc.
+
+```
+
+const cssAsJs = {
+  gear: {
+    fontSize: '1.7em',
+    cursor: 'pointer',
+    color: 'black',
+    padding: '14px',
+    border: 'none'
+  },
+  triangle: {
+    fontSize: '0.9em',
+    cursor: 'pointer',
+    color: '#000000',
+    padding: '14px',
+    border: 'none'
+  },
+  imageTrigger: {
+    height: '50px',
+    width: '50px',
+    cursor: 'pointer',
+    padding: '3px',
+    border: 'none'
+  },
+  textTrigger: {
+    cursor: 'pointer',
+    padding: '14px',
+    border: 'none',
+    fontWeight: 'bold'
+  },
+  menuContent: {
+    backgroundColor: '#f9f9f9',
+    minWidth: '180px',
+    padding: '12px',
+    boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)'
+  },
+  separator: {
+    width: '100%',
+    padding: '3px',
+    marginTop: '10px',
+    marginBottom: '3px'
+  }
+}
+
+```
 
 ## Download Examples
 
