@@ -53,12 +53,14 @@ class DropdownMenu extends React.Component {
     tick();
   }
 
-  showLoggedInUserName() {
+  loggedInUser() {
     if (this.props.userName) {
+      const css = this.getCss();
+
       return (
         <div>
           <p>Logged in as: <br /><strong>{this.props.userName}</strong></p>
-          <hr style={DefaultCss.separator} />
+          <hr style={css.separator} />
         </div>
       );
     }
@@ -85,7 +87,7 @@ class DropdownMenu extends React.Component {
       iconCss.color = this.props.iconColor; 
     }
     // Override iconColor if it is present in css prop
-    if (this.props.css && this.props.css.gear.color) {
+    if (this.props.css && this.props.css.gear && this.props.css.gear.color) {
       iconCss.color = this.props.css.gear.color;
     }
 
@@ -156,6 +158,12 @@ class DropdownMenu extends React.Component {
     return menuStyle;
   }
 
+  getChildren() {
+    return React.Children.map(this.props.children, child => {
+      return React.cloneElement(child, {css: this.props.css}, null);
+    });
+  }
+
   UNSAFE_componentWillMount() {
     const TRIGGER_CLASS = this.TRIGGER_CLASS;
     const MENUITEMS_DIV = this.MENUITEMS_DIV;
@@ -189,11 +197,11 @@ class DropdownMenu extends React.Component {
     }
 
     return (
-      <div style={DefaultCss.menu}>
+      <div style={DefaultCss.menu} onMouseOver={this.props.onMouseover} onMouseOut={this.props.onMouseout}>
         {this.getTrigger()}
         <div id={this.MENUITEMS_DIV} className={this.MENUITEMS_DIV} style={this.getMenuStyle()}>
-          {this.showLoggedInUserName()}
-          {this.props.children}
+          {this.loggedInUser()}
+          {this.getChildren()}
         </div>
       </div>
     );
