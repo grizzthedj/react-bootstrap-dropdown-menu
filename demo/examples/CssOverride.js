@@ -13,6 +13,10 @@ class CssOveride extends React.Component {
       menuContent: {
         backgroundColor: 'pink',
         padding: '24px',
+      },
+      separator: {
+        width: '100%',
+        borderTop: '1px solid #FF0000'
       }
     }
 
@@ -24,6 +28,8 @@ class CssOveride extends React.Component {
         <DropdownMenu css={cssAsJs}>
           <MenuItem text="Home" location="/cssoverride" />
           <MenuItem text="Edit Profile" disabled="true" location="/cssoverride" />
+          <MenuItem text="Settings" location="/cssoverride" />
+          <MenuItem type="separator" />
           <MenuItem text="Logout" location="/cssoverride" />
         </DropdownMenu>
 
@@ -41,6 +47,10 @@ class CssOveride extends React.Component {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menuContent: &#123;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backgroundColor: 'pink',<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;padding: '24px'<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator: &#123;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: '100%',<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;borderTop: '1px solid #FF0000'<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br />
             &nbsp;&nbsp;&nbsp;&nbsp;return (<br />

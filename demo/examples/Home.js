@@ -20,7 +20,7 @@ class Home extends React.Component {
           <li><Link to="/disabled">Dropdown Menu with disabled MenuItem</Link></li>
           <li><Link to="/position">Change Drop Position</Link></li>
           <li><Link to="/imagetrigger">Image Trigger</Link></li>
-          <li><Link to="/texttrigger">Text Trigger</Link></li>
+          <li><Link to="/texttrigger">Text Trigger and mouse events</Link></li>
           <li><Link to="/icontrigger">Bootstrap Icon Trigger</Link></li>
           <li><Link to="/multiple">Multiple Instances</Link></li>
           <li><Link to="/otherdropdown">Plays nicely with other dropdowns</Link></li>
