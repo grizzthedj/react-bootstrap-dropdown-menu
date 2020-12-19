@@ -56,18 +56,20 @@ class SettingsMenu extends React.Component {
 export default SettingsMenu;
 ```
 ## DropdownMenu props
-| Name         | Type     | Required | Default                 | Possible Values              | Description     |
+| Name          | Type     | Required | Default                 | Possible Values              | Description     |
 | ------------ | -------- | -------- | ----------------------- | ---------------------------- | --------------- |
-| userName     | String   | No       | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
-| css          | Object   | No       | See Css below           | Object as with attributes as described below | CSS as JS variables to be overridden
-| position     | String   | No       | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
-| triggerType  | String   | No       | icon                    | icon, text, image            | The Type of drop trigger |
-| trigger      | String   | No       | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
-| triggerWidth | String    | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The width to render the image trigger image. |
-| triggerHeight | String    | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The height to render the image trigger image. |
+| userName      | String   | No       | undefined               | Any string(e.g. 'John Doe')  | When provided, will render 'Logged in as: {userName}' in the top MenuItem |
+| css           | Object   | No       | See Css below           | Object as with attributes as described below | CSS as JS variables to be overridden
+| position      | String   | No       | right                   | left, center, right          | Changes the menu's horizontal drop position relative to the trigger |
+| triggerType   | String   | No       | icon                    | icon, text, image            | The Type of drop trigger |
+| trigger      | String    | No       | glyphicon glyphicon-cog | Depends on triggerType       | For <b>'icon'</b> triggerType: Any bootstrap glyphicon(http://getbootstrap.com/components/)<br />For <b>'text'</b> triggerType: Any String can be used<br />For <b>'image'</b> triggerType: Path to image(e.g. "/images/myimage.png") |
+| triggerWidth  | String   | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The width to render the image trigger image. |
+| triggerHeight | String   | No       | 50px (only applies to triggerType='image') | Any numeric value with 'px' appended(e.g. '45px') | The height to render the image trigger image. |
 | caratColor    | String   | No       | #000000  (Black)       | Any 6 digit hex value (e.g. #F4E3A2)  | The color of the DropDown carat (for triggerType 'image' and 'text' only)
-| iconColor    | String   | No       | #000000  (Black)       | Any 6 digit hex value (e.g. #F4E3A2)  | The color of the Bootstrap icon
+| iconColor     | String   | No       | #000000  (Black)       | Any 6 digit hex value (e.g. #F4E3A2)  | The color of the Bootstrap icon
 | fadeIn        | Boolean  | No       | false                  | true or false                 | Dropdown menu will fade in when set to true
+| onMouseover   | Function | No       | undefined              | A Function                   | A function that will fire when the mouse pointer hovers over the DropdownMenu trigger |   
+| onMouseout    | Function | No       | undefined              | A Function                   | A function that will fire when the mouse pointer moves away from the DropdownMenu trigger  |   
 
 ## MenuItem props
 | Name         | Type     | Required | Default                 | Possible Values              | Description     |
@@ -81,7 +83,7 @@ export default SettingsMenu;
 
 ## Css Override
 
-The following CSS(as JS) can be passed to the `DropdownMenu` via the `css` prop to override color, padding etc.
+The following CSS(as JS) can be passed to the `DropdownMenu` via the `css` prop to override color, padding etc. NOTE: `separator` only applies to the child `MenuItem` component.
 
 ```
 
@@ -120,10 +122,8 @@ const cssAsJs = {
     boxShadow: '0px 8px 16px 0px rgba(0,0,0,0.2)'
   },
   separator: {
-    width: '100%',
-    padding: '3px',
-    marginTop: '10px',
-    marginBottom: '3px'
+    width: '90%',
+    borderTop: '1px solid light-grey'
   }
 }
 

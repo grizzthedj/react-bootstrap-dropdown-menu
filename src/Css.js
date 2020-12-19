@@ -57,10 +57,8 @@ var Css = {
     display: 'block'
   },
   separator: {
-    width: '100%',
-    padding: '3px',
-    marginTop: '10px',
-    marginBottom: '3px'
+    width: '90%',
+    borderTop: '1px solid light-grey'
   }
 }
 

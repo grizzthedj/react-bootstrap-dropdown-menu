@@ -26,10 +26,22 @@ class MenuItem extends React.Component {
     }
   }
 
+  getCss() {
+    var propsCss = {...this.props.css};
+    var css = {...DefaultCss};
+
+    if (propsCss) {
+      css['separator'] = {...DefaultCss['separator'], ...propsCss['separator']}
+    }
+
+    return css;
+  }
+
   render() {
     if (this.props.type) {
       if (this.props.type.toLowerCase() === 'separator') {
-        return (<hr style={DefaultCss.separator} />)
+        const css = this.getCss();
+        return (<hr style={css.separator} />)
       }
       else {
         throw "The value for prop 'type' is not supported for MenuItem. The only supported type is 'separator'.";
