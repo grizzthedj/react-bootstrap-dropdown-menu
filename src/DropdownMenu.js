@@ -172,15 +172,10 @@ class DropdownMenu extends React.Component {
     window.addEventListener("click", function(e) {
       const klass = e.target.className;
       const carat = document.getElementById(CARAT_CLASS);
+      const menuItemDiv = document.getElementById(MENUITEMS_DIV);
 
-      if (parseInt(klass) === klass) {
-        return;
-      }
-
-      if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
-        var menuItemDiv = document.getElementById(MENUITEMS_DIV);
-
-        if (menuItemDiv) {
+      if (menuItemDiv && menuItemDiv.dataset.reactbsdditems === MENUITEMS_DIV) {
+        if (klass !== MENUITEMS_DIV + " show" && klass !== TRIGGER_CLASS && !klass.lastIndexOf("glyphicon", 0) == 0) {
           menuItemDiv.classList.remove('show');
 
           if (carat) {
@@ -199,7 +194,7 @@ class DropdownMenu extends React.Component {
     return (
       <div style={DefaultCss.menu} onMouseOver={this.props.onMouseover} onMouseOut={this.props.onMouseout}>
         {this.getTrigger()}
-        <div id={this.MENUITEMS_DIV} className={this.MENUITEMS_DIV} style={this.getMenuStyle()}>
+        <div data-reactbsdditems={this.MENUITEMS_DIV} id={this.MENUITEMS_DIV} className={this.MENUITEMS_DIV} style={this.getMenuStyle()}>
           {this.loggedInUser()}
           {this.getChildren()}
         </div>
